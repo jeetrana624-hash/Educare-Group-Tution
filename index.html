@@ -1,0 +1,3312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educare Group Tuition - Official Portal & Website</title>
+    <style>
+/* ==========================================================================
+   EDUCARE GROUP TUITION - OFFICIAL PORTAL STYLESHEET
+   Shree Ambica Vidhyalaya 3D Styling, Separate Girls & Boys Batches Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+
+:root {
+    --bg-base: #f4f8fe;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+    
+    --sidebar-bg: linear-gradient(180deg, #0f172a 0%, #1e293b 45%, #0f274a 100%);
+    --sidebar-border: rgba(255, 255, 255, 0.08);
+    --sidebar-hover: rgba(56, 189, 248, 0.12);
+    
+    --primary-gradient: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+    --accent-blue: #0284c7;
+    --accent-cyan: #38bdf8;
+    --accent-emerald: #059669;
+    --accent-rose: #e11d48;
+    --accent-amber: #d97706;
+
+    --border-glass: #dbeafe;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --font-stack: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --shadow-3d-subtle: 0 10px 25px -5px rgba(2, 132, 199, 0.08), 0 0 0 1px var(--border-glass);
+    --shadow-3d-floating: 0 20px 35px -8px rgba(2, 132, 199, 0.16), 0 0 20px rgba(56, 189, 248, 0.14);
+    
+    --radius-xl: 20px;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --transition-snappy: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.lang-gu { font-family: 'Noto Sans Gujarati', var(--font-stack); }
+body.lang-hi { font-family: 'Noto Sans Devanagari', var(--font-stack); }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background Wallpaper Layer with Dynamic Opacity */
+.background-wallpaper-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.container-pro {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.gap-3 { gap: 12px; }
+
+/* Top Announcement Ribbon */
+.top-announcement-bar {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 10px 0;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    position: relative;
+    z-index: 10;
+}
+.top-utility-items { display: flex; align-items: center; gap: 20px; }
+
+.lang-selector-mini {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.14);
+    padding: 3px;
+    border-radius: 8px;
+    gap: 4px;
+}
+.btn-lang {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition-snappy);
+}
+.btn-lang.active { background: #0284c7; color: #ffffff; }
+
+/* Navigation Bar */
+.public-navbar {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1.5px solid #dbeafe;
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.05);
+}
+.public-brand { display: flex; align-items: center; gap: 14px; }
+.brand-crest-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+}
+.brand-crest-box img { width: 100%; height: 100%; object-fit: contain; }
+.public-brand h2 { font-size: 20px; font-weight: 800; color: #0f172a; line-height: 1.2; }
+.brand-subtag { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: 2px; }
+
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { text-decoration: none; color: #334155; font-weight: 700; font-size: 14px; transition: 0.2s; }
+.nav-links a:hover { color: #0284c7; }
+
+/* Hero Cover Section */
+.hero-cover-section {
+    padding: 70px 0 80px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(239,246,255,0.88) 100%);
+    border-bottom: 1px solid #dbeafe;
+}
+.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+
+.hero-pill-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    background: #e0f2fe;
+    color: #0369a1;
+    margin-bottom: 18px;
+}
+.hero-copy h1 { font-size: 40px; font-weight: 800; line-height: 1.25; color: #0f172a; margin-bottom: 18px; }
+.hero-copy p { font-size: 16px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 28px; }
+.hero-cta-group { display: flex; gap: 16px; margin-bottom: 34px; }
+.btn-lg { padding: 13px 26px; font-size: 14px; border-radius: 12px; }
+
+.hero-metrics-strip {
+    display: flex;
+    gap: 36px;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 24px;
+}
+.hero-metrics-strip h3 { font-size: 28px; font-weight: 800; color: #0284c7; }
+.hero-metrics-strip small { font-size: 12px; font-weight: 700; color: #64748b; margin-top: 3px; display: block; }
+
+.hero-visual-card {
+    border-radius: 24px;
+    overflow: hidden;
+    height: 380px;
+    background: linear-gradient(135deg, #0284c7 0%, #1e3a8a 100%);
+    box-shadow: var(--shadow-3d-floating);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.campus-showcase-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
+.campus-showcase-art img { width: 100%; height: 100%; object-fit: cover; }
+.art-building-graphic { font-size: 110px; }
+.art-overlay-details {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 14px 18px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+.pulse-emerald-dot { width: 11px; height: 11px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981; }
+
+/* Batches Highlight Section */
+.showcase-section { padding: 75px 0; }
+.bg-azure-tint { background: rgba(240, 247, 255, 0.88); }
+
+.section-title-center { text-align: center; max-width: 680px; margin: 0 auto 45px; }
+.section-pill { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.9px; color: #0284c7; background: #e0f2fe; padding: 5px 14px; border-radius: 20px; }
+.section-title-center h2 { font-size: 32px; font-weight: 800; margin: 12px 0 8px; color: #0f172a; }
+.section-title-center p { font-size: 15px; color: var(--text-secondary); }
+
+.batch-highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.batch-card-item {
+    padding: 34px 28px;
+    background: #ffffff;
+    border-radius: 22px;
+}
+.border-pink-accent { border-top: 4px solid #db2777; }
+.border-blue-accent { border-top: 4px solid #2563eb; }
+.batch-icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+.bg-pink-tint { background: #fdf2f8; color: #db2777; }
+.bg-blue-tint { background: #eff6ff; color: #2563eb; }
+.bg-amber-tint { background: #fef3c7; color: #d97706; }
+.bg-purple-tint { background: #f3e8ff; color: #7e22ce; }
+.bg-emerald-tint { background: #ecfdf5; color: #059669; }
+.bg-rose-tint { background: #ffe4e6; color: #e11d48; }
+.bg-yellow-tint { background: #fefce8; color: #ca8a04; }
+.bg-teal-tint { background: #f0fdfa; color: #0d9488; }
+.bg-indigo-tint { background: #eef2ff; color: #4338ca; }
+.bg-violet-tint { background: #f5f3ff; color: #6d28d9; }
+.bg-lime-tint { background: #f7fee7; color: #4d7c0f; }
+.bg-sky-tint { background: #f0f9ff; color: #0284c7; }
+
+.batch-card-item h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.batch-card-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+.batch-feature-list { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #334155; }
+
+/* Compact Faculty Cards Layout */
+.faculty-grid-showcase {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+}
+
+.faculty-card-pro {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 16px !important;
+    padding: 22px 16px !important;
+    text-align: center !important;
+    border: 1.5px solid #e2e8f0 !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+.faculty-card-pro:hover {
+    transform: translateY(-4px) !important;
+    border-color: #38bdf8 !important;
+    box-shadow: 0 12px 24px -5px rgba(2, 132, 199, 0.15) !important;
+}
+.faculty-avatar-crest {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 auto 10px !important;
+    background: #eff6ff !important;
+    border-radius: 50% !important;
+    display: flex; 
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 22px !important;
+    border: 1.5px solid #bfdbfe !important;
+}
+.faculty-card-pro h3 { font-size: 15px !important; font-weight: 800 !important; color: #0f172a !important; margin-bottom: 3px !important; }
+.faculty-qualification { font-size: 12px !important; color: #475569 !important; font-weight: 600 !important; margin-bottom: 2px !important; }
+.faculty-tag { font-size: 11px !important; color: #0284c7 !important; font-weight: 700 !important; margin-bottom: 8px !important; }
+.faculty-experience-badge {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #0284c7 !important;
+    background: #e0f2fe !important;
+    padding: 3px 12px !important;
+    border-radius: 20px !important;
+    margin-bottom: 8px !important;
+    border: 1px solid #bae6fd !important;
+}
+.faculty-class-badge {
+    background: #f8fafc !important;
+    color: #334155 !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    padding: 3px 10px !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Public Campus Gallery Styles */
+.public-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+.gallery-card-item {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1.5px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: var(--transition-snappy);
+    display: flex;
+    flex-direction: column;
+}
+.gallery-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-3d-floating);
+    border-color: #7dd3fc;
+}
+.gallery-media-slot {
+    width: 100%;
+    height: 190px;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.gallery-media-slot img, .gallery-media-slot video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery-caption-box {
+    padding: 16px 20px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gallery-caption-box strong { font-size: 14px; font-weight: 800; color: #0f172a; }
+
+/* Contact Section & Live Map */
+.contact-card-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; }
+.contact-details-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 36px 32px;
+    border-radius: 24px;
+    border: 1.5px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.contact-item { display: flex; gap: 16px; }
+.contact-icon { width: 44px; height: 44px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.contact-item h4 { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+.contact-item p, .contact-item a { font-size: 14px; color: var(--text-secondary); text-decoration: none; line-height: 1.5; }
+.map-container-box { background: #ffffff; border-radius: 24px; overflow: hidden; border: 1.5px solid #cbd5e1; }
+
+.public-footer { background: #0f172a; color: #94a3b8; padding: 26px 0; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.1); }
+.link-btn { background: transparent; border: none; color: #38bdf8; font-weight: 700; cursor: pointer; }
+
+/* Range Slider Pro for Background Opacity */
+.range-slider-pro {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #dbeafe;
+    outline: none;
+    margin: 8px 0 6px;
+    cursor: pointer;
+}
+
+/* 12 Modules Launcher Tiles Grid */
+.modules-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+.module-tile-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 18px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-snappy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.module-tile-card:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+    box-shadow: 0 12px 24px -5px rgba(2, 132, 199, 0.15);
+}
+.tile-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.module-tile-card h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+}
+.module-tile-card small {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+/* Cards, Inputs & Buttons */
+.card-3d {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-3d-subtle);
+    transition: var(--transition-snappy);
+    position: relative;
+}
+
+.input-field-3d {
+    width: 100%;
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    color: #0f172a;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 14px;
+}
+.input-field-3d:focus { border-color: var(--accent-blue); background: #ffffff; box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15); }
+
+.field-label { display: block; font-size: 12px; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.btn-3d {
+    padding: 11px 20px;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-snappy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+.btn-3d:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--primary-gradient); color: #ffffff; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3); }
+.btn-secondary { background: #e0f2fe; border: 1px solid #bae6fd; color: #0369a1; }
+.btn-danger { background: linear-gradient(135deg, #ef4444, #dc2626); color: #ffffff; }
+.btn-logout { background: rgba(239, 68, 68, 0.18); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; }
+.btn-full { width: 100%; }
+.btn-sm { padding: 7px 14px; font-size: 12px; border-radius: 8px; }
+
+/* Language Switcher inside Login Modal */
+.lang-selection-group { margin-bottom: 18px; text-align: left; }
+.field-label-sm { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); margin-bottom: 6px; display: block; font-weight: 700; }
+.lang-pill-selector {
+    display: flex;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 4px;
+    border-radius: 12px;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+.lang-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-snappy);
+}
+.lang-tab.active { background: var(--primary-gradient); color: #ffffff; }
+
+/* Modals & Popups */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 36px 30px;
+    text-align: center;
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.3);
+    position: relative;
+}
+
+#edit-student-modal,
+#add-test-modal,
+#modal-manage-passwords {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.08);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    z-index: 99999;
+    padding: 24px 28px;
+    overflow-y: auto;
+}
+
+#edit-student-modal .modal-card-solid,
+#add-test-modal .modal-card-solid,
+#modal-manage-passwords .modal-card-solid {
+    width: 440px;
+    max-width: 92vw;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 2px solid #38bdf8;
+    box-shadow: -10px 20px 50px rgba(15, 23, 42, 0.28);
+    padding: 26px 28px;
+    position: relative;
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    animation: drawerSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawerSlideIn {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 14px; margin-bottom: 18px; }
+.modal-header h3 { font-size: 17px; font-weight: 800; color: #0f172a; margin: 0; }
+.modal-body-scroll { overflow-y: auto; max-height: calc(100vh - 120px); padding-right: 6px; }
+
+.modal-close-corner { 
+    position: absolute; 
+    top: 16px; 
+    right: 16px; 
+    width: 28px; 
+    height: 28px; 
+    border-radius: 50%; 
+    background: #f1f5f9; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    font-size: 12px; 
+    font-weight: 800; 
+    border: none; 
+}
+.modal-close-corner:hover { background: #fee2e2; color: #ef4444; }
+
+.role-segmented-control { display: flex; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 4px; border-radius: 12px; gap: 4px; margin-bottom: 18px; }
+.role-tab { flex: 1; background: transparent; border: none; color: var(--text-secondary); padding: 9px 0; font-size: 12px; font-weight: 700; border-radius: 9px; cursor: pointer; }
+.role-tab.active { background: var(--primary-gradient); color: #ffffff; }
+
+.school-logo-crest { width: 72px; height: 72px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; border-radius: 20px; background: #eff6ff; padding: 6px; border: 1px solid #bfdbfe; }
+.school-logo-crest img { width: 100%; height: 100%; object-fit: contain; }
+
+.school-logo-crest-sm { width: 44px; height: 44px; border-radius: 12px; background: #ffffff; padding: 4px; display: flex; align-items: center; justify-content: center; }
+.school-logo-crest-sm img { width: 100%; height: 100%; object-fit: contain; }
+
+.default-creds-box {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
+}
+.creds-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #475569;
+    font-family: monospace;
+}
+
+/* Dashboard Sidebar & Viewport */
+.enterprise-app { display: flex; min-height: 100vh; }
+.sidebar-3d { width: 290px; background: var(--sidebar-bg); display: flex; flex-direction: column; padding: 24px 16px; flex-shrink: 0; }
+.sidebar-brand { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid var(--sidebar-border); margin-bottom: 20px; }
+.brand-titles h3 { font-size: 15px; font-weight: 800; color: #f8fafc; }
+.version-tag { font-size: 11px; color: var(--accent-cyan); font-weight: 700; }
+
+.nav-menu { display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto; }
+.nav-item { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: transparent; border: 1px solid transparent; border-radius: 14px; color: #cbd5e1; font-size: 13px; font-weight: 600; cursor: pointer; text-align: left; }
+.nav-item:hover { background: var(--sidebar-hover); color: #ffffff; transform: translateX(4px); }
+.nav-item.active { background: linear-gradient(90deg, #0284c7 0%, #2563eb 100%); color: #ffffff; font-weight: 700; }
+
+.sidebar-footer { padding-top: 18px; border-top: 1px solid var(--sidebar-border); }
+.user-profile-badge { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.user-avatar-dot { width: 10px; height: 10px; border-radius: 50%; background: #34d399; }
+.user-info-text strong { color: #f8fafc; font-size: 13px; }
+.badge-role { font-size: 10px; color: var(--accent-cyan); font-weight: 800; text-transform: uppercase; }
+
+.viewport-content { flex: 1; padding: 28px 36px; overflow-y: auto; }
+.app-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 26px; margin-bottom: 28px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); }
+
+.welcome-hero-card {
+    padding: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(224,242,254,0.95) 100%);
+    border: 1.5px solid #bae6fd;
+    margin-bottom: 26px;
+    border-radius: 22px;
+}
+.hero-tag { font-size: 11px; font-weight: 800; color: #0284c7; }
+.hero-left h1 { font-size: 26px; margin: 10px 0; font-weight: 800; color: #0f172a; }
+.hero-left p { color: var(--text-secondary); max-width: 600px; font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+.hero-quick-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.metric-cube-3d { background: #ffffff; border: 1px solid #bae6fd; padding: 22px 28px; border-radius: var(--radius-lg); text-align: center; min-width: 145px; }
+.metric-number { font-size: 28px; font-weight: 800; color: #0284c7; display: block; }
+.metric-label { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-top: 4px; display: block; }
+
+.bar-chart-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 220px;
+    padding: 24px 10px 10px;
+    background: #f8fafc;
+    border-radius: var(--radius-md);
+    border: 1.5px solid #e2e8f0;
+    margin-top: 14px;
+}
+.chart-bar-group { display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; width: 65px; }
+.chart-bar-track { width: 32px; height: 140px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: flex-end; }
+.chart-bar-fill { width: 100%; background: var(--primary-gradient); border-radius: 8px; }
+
+.dashboard-grid-3d { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.summary-card { padding: 26px; background: #ffffff; }
+.bullet-list-3d { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+.bullet-list-3d li { padding: 14px 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 13px; border-left: 4px solid var(--accent-blue); }
+
+.content-card { padding: 28px; margin-bottom: 26px; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); }
+.card-title-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.form-grid-3d { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.full-width-span { grid-column: 1 / -1; }
+
+.table-container-3d { width: 100%; overflow-x: auto; border-radius: var(--radius-md); border: 1.5px solid #e2e8f0; background: #ffffff; }
+.data-table-3d { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table-3d th { background: #f1f5f9; padding: 14px 16px; text-align: left; color: #1e293b; font-weight: 700; border-bottom: 1.5px solid #cbd5e1; }
+.data-table-3d td { padding: 13px 16px; border-bottom: 1px solid #f1f5f9; color: #334155; }
+
+.notices-feed-grid, .holiday-roster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+.notice-item-3d, .holiday-card-3d { background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-md); padding: 22px; }
+
+.inner-form-card { padding: 22px; margin-bottom: 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-lg); }
+.hidden-panel { display: none; }
+.view-panel { display: none; }
+.view-panel.active { display: block; }
+
+.about-hero-box { display: flex; align-items: center; gap: 18px; padding-bottom: 18px; border-bottom: 1.5px solid #e2e8f0; }
+
+@media (max-width: 950px) {
+    .enterprise-app { flex-direction: column; }
+    .sidebar-3d { width: 100%; }
+    .hero-grid, .contact-card-grid, .batch-highlights-grid, .dashboard-grid-3d { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .viewport-content { padding: 18px 14px; }
+}
+
+</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="lang-en">
+
+    <!-- Background Wallpaper Layer with Dynamic Opacity Control -->
+    <div id="site-background-wallpaper" class="background-wallpaper-overlay"></div>
+
+    <!-- ================= 1. PUBLIC TUITION COVER / LANDING PAGE ================= -->
+    <div id="public-landing-page">
+        <!-- Top Announcement Ribbon -->
+        <div class="top-announcement-bar">
+            <div class="container-pro flex-between">
+                <span id="pub-top-ribbon" data-i18n="topRibbon">🎓 <strong>Admissions Open Session 2026-27</strong> • Standards 8 to 12 (Science & Commerce) • Separate Girls & Boys Batches</span>
+                <div class="top-utility-items">
+                    <span>📞 <a id="pub-top-phone" href="tel:9173830909" style="color:inherit; text-decoration:none;">9173830909</a></span>
+                    <span>✉️ <a id="pub-top-email" href="mailto:educaregrouptuition@gmail.com" style="color:inherit; text-decoration:none;">educaregrouptuition@gmail.com</a></span>
+                    <div class="lang-selector-mini">
+                        <button type="button" class="btn-lang active" onclick="window.switchLanguage('en')">EN</button>
+                        <button type="button" class="btn-lang" onclick="window.switchLanguage('gu')">ગુજરાતી</button>
+                        <button type="button" class="btn-lang" onclick="window.switchLanguage('hi')">हिन्दी</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <header class="public-navbar">
+            <div class="container-pro flex-between">
+                <div class="public-brand">
+                    <div class="brand-crest-box">
+                        <img id="nav-logo-img" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egBlueGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230284c7%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%232563eb%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e3a8a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egGoldGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23f59e0b%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23b45309%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22egGlow%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%224%22%20stdDeviation%3D%226%22%20flood-color%3D%22%230284c7%22%20flood-opacity%3D%220.3%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3C%21--%20Outer%20Shield%20Crest%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2012%20C148%2012%20182%2028%20182%2075%20C182%20135%20128%20178%20100%20192%20C72%20178%2018%20135%2018%2075%20C18%2028%2052%2012%20100%2012%20Z%22%20fill%3D%22url%28%23egBlueGrad%29%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%224.5%22%20filter%3D%22url%28%23egGlow%29%22/%3E%0A%20%20%3C%21--%20Inner%20Shield%20Trim%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2022%20C140%2022%20170%2036%20170%2076%20C170%20128%20122%20166%20100%20178%20C78%20166%2030%20128%2030%2076%20C30%2036%2060%2022%20100%2022%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.5%22/%3E%0A%20%20%3C%21--%20Graduation%20Cap%20Top%20--%3E%0A%20%20%3Cpolygon%20points%3D%22100%2C42%20146%2C58%20100%2C74%2054%2C58%22%20fill%3D%22url%28%23egGoldGrad%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M100%2C74%20L100%2C90%20C100%2C98%20128%2C104%20138%2C92%20L138%2C70%22%20fill%3D%22none%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Ccircle%20cx%3D%22146%22%20cy%3D%2274%22%20r%3D%223.5%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%3C%21--%20Open%20Book%20Symbol%20--%3E%0A%20%20%3Cpath%20d%3D%22M68%20116%20C80%20110%2094%20112%20100%20118%20C106%20112%20120%20110%20132%20116%20L132%20136%20C120%20130%20106%20132%20100%20138%20C94%20132%2080%20130%2068%20136%20Z%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.95%22/%3E%0A%20%20%3C%21--%20Monogram%20EG%20Text%20--%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22104%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22900%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221%22%3EEG%3C/text%3E%0A%20%20%3C%21--%20Ribbon%20Banner%20Bottom%20--%3E%0A%20%20%3Crect%20x%3D%2242%22%20y%3D%22146%22%20width%3D%22116%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22url%28%23egGoldGrad%29%22/%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22160%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%228.5%22%20font-weight%3D%22800%22%20fill%3D%22%231e1b4b%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221.2%22%3EEDUCARE%20TUITION%3C/text%3E%0A%3C/svg%3E" alt="Educare Logo">
+                    </div>
+                    <div>
+                        <h2 id="pub-school-main-name" data-i18n="brandTitle">Educare Group Tuition</h2>
+                        <p class="brand-subtag" id="pub-school-subtag" data-i18n="brandSubtitle">Ahmedabad, Gujarat • Dedicated Coaching For Standards 8th to 12th</p>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="#about-sec" data-i18n="navAbout">About Tuition</a>
+                    <a href="#batches-sec" data-i18n="navBatches">Batches</a>
+                    <a href="#faculty-sec" data-i18n="navFaculty">Tutors</a>
+                    <a href="#gallery-sec" data-i18n="navGallery">Classroom Gallery</a>
+                    <a href="#contact-sec" data-i18n="navContact">Contact</a>
+                    <button class="btn-3d btn-primary" onclick="window.openLoginModal()" data-i18n="navLogin">Batch Portal Login 🔐</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Cover Section -->
+        <section id="about-sec" class="hero-cover-section">
+            <div class="container-pro hero-grid">
+                <div class="hero-copy">
+                    <span class="hero-pill-badge" id="pub-hero-badge" data-i18n="heroPill">Disciplined Learning & High Score Focus</span>
+                    <h1 id="pub-hero-title" data-i18n="heroHeading">Building Foundations, Achieving Academic Heights</h1>
+                    <p id="pub-hero-desc" data-i18n="heroDescription">Educare Group Tuition offers result-oriented coaching with separate, distraction-free batches for Girls and Boys, weekly test analysis, dedicated doubt solving, and personalized student mentoring.</p>
+                    <div class="hero-cta-group">
+                        <a href="#contact-sec" class="btn-3d btn-primary btn-lg" data-i18n="btnAdmissionInquiry">Inquire For Admission</a>
+                        <button class="btn-3d btn-secondary btn-lg" onclick="window.openLoginModal()" data-i18n="btnStaffLogin">Student & Teacher Portal</button>
+                    </div>
+                    <div class="hero-metrics-strip">
+                        <div><h3>100%</h3><small data-i18n="statBoard">Result Commitment</small></div>
+                        <div><h3>2</h3><small data-i18n="statExp">Dedicated Batches (Girls & Boys)</small></div>
+                        <div><h3>8-12</h3><small data-i18n="statAttention">Standards Focused</small></div>
+                    </div>
+                </div>
+                <div class="hero-visual-card card-3d">
+                    <div class="campus-showcase-art" id="pub-hero-photo-box">
+                        <div class="art-building-graphic">📚</div>
+                        <div class="art-overlay-details">
+                            <span class="pulse-emerald-dot"></span>
+                            <div>
+                                <strong id="pub-campus-name" data-i18n="artCardTitle">Educare Smart Classroom</strong><br>
+                                <small id="pub-campus-tag" data-i18n="artCardSubtitle">Air-conditioned • CCTV Protected • Small Batch Sizes</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batches Highlight Section -->
+        <section id="batches-sec" class="showcase-section bg-azure-tint">
+            <div class="container-pro">
+                <div class="section-title-center">
+                    <span class="section-pill" data-i18n="secPillBatches">Specialized Divisions</span>
+                    <h2 data-i18n="secHeadingBatches">Separate Girls & Boys Batches</h2>
+                    <p data-i18n="secSubBatches">Focused learning environments designed for maximum concentration and individual performance</p>
+                </div>
+                <div class="batch-highlights-grid">
+                    <div class="card-3d batch-card-item border-pink-accent">
+                        <div class="batch-icon-badge bg-pink-tint"><i class="fa-solid fa-venus"></i></div>
+                        <h3>Girls Batch</h3>
+                        <p>Safe, supportive, and focused atmosphere with custom batch timings, weekly evaluations, and complete privacy.</p>
+                        <ul class="batch-feature-list">
+                            <li>✓ Timing: 4:00 PM to 5:30 PM</li>
+                            <li>✓ Standards: 8th, 9th, 10th, 11th, 12th</li>
+                            <li>✓ Subjects: Maths, Science, Accountancy, English</li>
+                        </ul>
+                    </div>
+                    <div class="card-3d batch-card-item border-blue-accent">
+                        <div class="batch-icon-badge bg-blue-tint"><i class="fa-solid fa-mars"></i></div>
+                        <h3>Boys Batch</h3>
+                        <p>Disciplined, energetic, and competitive coaching with concept-driven problem solving and mock board exam series.</p>
+                        <ul class="batch-feature-list">
+                            <li>✓ Timing: 5:30 PM to 7:00 PM</li>
+                            <li>✓ Standards: 8th, 9th, 10th, 11th, 12th</li>
+                            <li>✓ Subjects: Maths, Science, Accountancy, English</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Showcase -->
+        <section id="faculty-sec" class="showcase-section">
+            <div class="container-pro">
+                <div class="section-title-center">
+                    <span class="section-pill" data-i18n="secPillFaculty">Dedicated Mentors</span>
+                    <h2 data-i18n="secHeadingFaculty">Experienced Coaching Faculty</h2>
+                    <p data-i18n="secSubFaculty">Subject specialists dedicated to building fundamental clarity and board exam readiness</p>
+                </div>
+                <div class="faculty-grid-showcase" id="public-faculty-grid"></div>
+            </div>
+        </section>
+
+        <!-- Campus Gallery Section -->
+        <section id="gallery-sec" class="showcase-section bg-azure-tint">
+            <div class="container-pro">
+                <div class="section-title-center">
+                    <span class="section-pill" data-i18n="secPillGallery">Classroom Moments</span>
+                    <h2 data-i18n="secHeadingGallery">Tuition Photo & Video Gallery</h2>
+                    <p data-i18n="secSubGallery">Lectures, test sessions, student celebrations, and academic achievements</p>
+                </div>
+                <div class="public-gallery-grid" id="public-gallery-grid"></div>
+            </div>
+        </section>
+
+        <!-- Contact & Google Maps Section -->
+        <section id="contact-sec" class="showcase-section">
+            <div class="container-pro">
+                <div class="section-title-center">
+                    <span class="section-pill" data-i18n="secPillContact">Visit Us</span>
+                    <h2 data-i18n="secHeadingContact">Tuition Center Location & Contact</h2>
+                    <p data-i18n="secSubContact">Visit our classroom or call for batch timings and enrollment details</p>
+                </div>
+
+                <div class="contact-card-grid">
+                    <div class="card-3d contact-details-box">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4 data-i18n="lblAddress">Center Address</h4>
+                                <p id="pub-contact-address" data-i18n="valAddress">Educare Group Tuition, Maninagar / Khokhra Area, Ahmedabad, Gujarat - 380008</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4 data-i18n="lblPhone">Admission Helpline Phone</h4>
+                                <p><a id="pub-contact-phone" href="tel:9173830909">+91 9173830909</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4 data-i18n="lblEmail">Email Inquiries</h4>
+                                <p><a id="pub-contact-email" href="mailto:educaregrouptuition@gmail.com">educaregrouptuition@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div>
+                                <h4 data-i18n="lblHours">Tuition Timings</h4>
+                                <p id="pub-contact-hours" data-i18n="valHours">Monday to Saturday: 03:00 PM to 08:30 PM (Sunday Test Series)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Embedded Google Map -->
+                    <div class="card-3d map-container-box">
+                        <iframe 
+                            id="pub-map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117502.85309623838!2d72.50808000490538!3d23.02396347306282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f221441595%3A0x67d87bc47970d624!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="340" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Public Footer -->
+        <footer class="public-footer">
+            <div class="container-pro flex-between">
+                <p id="pub-footer-copy" data-i18n="footerCopy">© 2026 Educare Group Tuition. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <button class="link-btn" onclick="window.openLoginModal()" data-i18n="footerPortal">Batch Portal Login ➔</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ================= 2. BATCH-LEVEL AUTHENTICATION MODAL ================= -->
+    <div id="login-modal" class="modal-backdrop" style="display: none;" onclick="window.handleModalBackdropClick(event, 'login-modal')">
+        <div class="card-3d auth-card" onclick="event.stopPropagation()">
+            <button type="button" class="modal-close-corner" onclick="window.closeLoginModal()">✕</button>
+            <div class="school-brand">
+                <div class="school-logo-crest" id="login-logo-container">
+                    <img id="login-logo-img" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egBlueGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230284c7%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%232563eb%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e3a8a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egGoldGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23f59e0b%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23b45309%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22egGlow%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%224%22%20stdDeviation%3D%226%22%20flood-color%3D%22%230284c7%22%20flood-opacity%3D%220.3%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3C%21--%20Outer%20Shield%20Crest%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2012%20C148%2012%20182%2028%20182%2075%20C182%20135%20128%20178%20100%20192%20C72%20178%2018%20135%2018%2075%20C18%2028%2052%2012%20100%2012%20Z%22%20fill%3D%22url%28%23egBlueGrad%29%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%224.5%22%20filter%3D%22url%28%23egGlow%29%22/%3E%0A%20%20%3C%21--%20Inner%20Shield%20Trim%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2022%20C140%2022%20170%2036%20170%2076%20C170%20128%20122%20166%20100%20178%20C78%20166%2030%20128%2030%2076%20C30%2036%2060%2022%20100%2022%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.5%22/%3E%0A%20%20%3C%21--%20Graduation%20Cap%20Top%20--%3E%0A%20%20%3Cpolygon%20points%3D%22100%2C42%20146%2C58%20100%2C74%2054%2C58%22%20fill%3D%22url%28%23egGoldGrad%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M100%2C74%20L100%2C90%20C100%2C98%20128%2C104%20138%2C92%20L138%2C70%22%20fill%3D%22none%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Ccircle%20cx%3D%22146%22%20cy%3D%2274%22%20r%3D%223.5%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%3C%21--%20Open%20Book%20Symbol%20--%3E%0A%20%20%3Cpath%20d%3D%22M68%20116%20C80%20110%2094%20112%20100%20118%20C106%20112%20120%20110%20132%20116%20L132%20136%20C120%20130%20106%20132%20100%20138%20C94%20132%2080%20130%2068%20136%20Z%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.95%22/%3E%0A%20%20%3C%21--%20Monogram%20EG%20Text%20--%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22104%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22900%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221%22%3EEG%3C/text%3E%0A%20%20%3C%21--%20Ribbon%20Banner%20Bottom%20--%3E%0A%20%20%3Crect%20x%3D%2242%22%20y%3D%22146%22%20width%3D%22116%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22url%28%23egGoldGrad%29%22/%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22160%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%228.5%22%20font-weight%3D%22800%22%20fill%3D%22%231e1b4b%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221.2%22%3EEDUCARE%20TUITION%3C/text%3E%0A%3C/svg%3E" alt="Educare Logo">
+                </div>
+                <h2 id="modal-school-name" data-i18n="brandTitle">Educare Group Tuition</h2>
+                <p class="brand-subtitle" data-i18n="loginSubtitle">Dedicated Batch Access Portal</p>
+            </div>
+
+            <!-- Language Pill Bar Inside Login Modal -->
+            <div class="lang-selection-group">
+                <label class="field-label-sm" data-i18n="selectLanguage">Portal Language</label>
+                <div class="lang-pill-selector">
+                    <button type="button" class="lang-tab active" onclick="window.switchLanguage('en')">English</button>
+                    <button type="button" class="lang-tab" onclick="window.switchLanguage('gu')">ગુજરાતી</button>
+                    <button type="button" class="lang-tab" onclick="window.switchLanguage('hi')">हिन्दी</button>
+                </div>
+            </div>
+
+            <!-- 3 Batch Tabs (Girls, Boys, Teacher) -->
+            <div class="role-segmented-control">
+                <button type="button" id="role-girls" class="role-tab active" onclick="window.selectBatchRole('Girls')">👧 Girls Batch</button>
+                <button type="button" id="role-boys" class="role-tab" onclick="window.selectBatchRole('Boys')">👦 Boys Batch</button>
+                <button type="button" id="role-teacher" class="role-tab" onclick="window.selectBatchRole('Teacher')">👨‍🏫 Teacher</button>
+            </div>
+
+            <!-- Credentials Box -->
+            <div id="credentials-box" class="form-group">
+                <label class="field-label" id="batch-password-label" style="text-align:left;">Enter Girls Batch Password</label>
+                <input type="password" id="login-password" class="input-field-3d" placeholder="Enter batch password">
+                <button type="button" class="btn-3d btn-primary btn-full" onclick="window.batchLogin()" data-i18n="loginBtn">Unlock Batch Portal 🚀</button>
+            </div>
+            
+            <div class="default-creds-box">
+                <span class="text-muted" style="font-size: 11px;">Initial Default Passwords:</span>
+                <div class="creds-tags">
+                    <span>Girls: <b>girls123</b></span>
+                    <span>Boys: <b>boys123</b></span>
+                    <span>Teacher: <b>1234</b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= 3. MAIN TUITION PORTAL APPLICATION ================= -->
+    <div class="enterprise-app" id="main-content" style="display: none;">
+        <aside class="sidebar-3d">
+            <div class="sidebar-brand">
+                <div class="school-logo-crest-sm" id="sidebar-logo-container">
+                    <img id="sidebar-logo-img" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egBlueGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230284c7%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%232563eb%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e3a8a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egGoldGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23f59e0b%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23b45309%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22egGlow%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%224%22%20stdDeviation%3D%226%22%20flood-color%3D%22%230284c7%22%20flood-opacity%3D%220.3%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3C%21--%20Outer%20Shield%20Crest%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2012%20C148%2012%20182%2028%20182%2075%20C182%20135%20128%20178%20100%20192%20C72%20178%2018%20135%2018%2075%20C18%2028%2052%2012%20100%2012%20Z%22%20fill%3D%22url%28%23egBlueGrad%29%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%224.5%22%20filter%3D%22url%28%23egGlow%29%22/%3E%0A%20%20%3C%21--%20Inner%20Shield%20Trim%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2022%20C140%2022%20170%2036%20170%2076%20C170%20128%20122%20166%20100%20178%20C78%20166%2030%20128%2030%2076%20C30%2036%2060%2022%20100%2022%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.5%22/%3E%0A%20%20%3C%21--%20Graduation%20Cap%20Top%20--%3E%0A%20%20%3Cpolygon%20points%3D%22100%2C42%20146%2C58%20100%2C74%2054%2C58%22%20fill%3D%22url%28%23egGoldGrad%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M100%2C74%20L100%2C90%20C100%2C98%20128%2C104%20138%2C92%20L138%2C70%22%20fill%3D%22none%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Ccircle%20cx%3D%22146%22%20cy%3D%2274%22%20r%3D%223.5%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%3C%21--%20Open%20Book%20Symbol%20--%3E%0A%20%20%3Cpath%20d%3D%22M68%20116%20C80%20110%2094%20112%20100%20118%20C106%20112%20120%20110%20132%20116%20L132%20136%20C120%20130%20106%20132%20100%20138%20C94%20132%2080%20130%2068%20136%20Z%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.95%22/%3E%0A%20%20%3C%21--%20Monogram%20EG%20Text%20--%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22104%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22900%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221%22%3EEG%3C/text%3E%0A%20%20%3C%21--%20Ribbon%20Banner%20Bottom%20--%3E%0A%20%20%3Crect%20x%3D%2242%22%20y%3D%22146%22%20width%3D%22116%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22url%28%23egGoldGrad%29%22/%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22160%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%228.5%22%20font-weight%3D%22800%22%20fill%3D%22%231e1b4b%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221.2%22%3EEDUCARE%20TUITION%3C/text%3E%0A%3C/svg%3E" alt="Educare Logo">
+                </div>
+                <div class="brand-titles">
+                    <h3 id="sidebar-school-title" data-i18n="brandTitle">Educare Group Tuition</h3>
+                    <span class="version-tag" id="sidebar-batch-tag">Girls Batch Portal</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" onclick="window.navigateTo('view-home')">
+                    <span class="nav-icon">📊</span> <span data-i18n="menuHome">Dashboard Home</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-batch-mgmt')">
+                    <span class="nav-icon">🎓</span> <span data-i18n="menuStudents">Profile / Batch Directory</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-homework')">
+                    <span class="nav-icon">📖</span> <span data-i18n="menuHomework">Home Work</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-notices')">
+                    <span class="nav-icon">📢</span> <span data-i18n="menuNotices">Notice Board</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-tests')">
+                    <span class="nav-icon">📝</span> <span data-i18n="menuTestResults">Test Results</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-marksheet')">
+                    <span class="nav-icon">📑</span> <span data-i18n="menuMarkSheet">Progress Marksheet</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-attendance')">
+                    <span class="nav-icon">✅</span> <span data-i18n="menuAttendance">Attendance Register</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-assignment')">
+                    <span class="nav-icon">📂</span> <span data-i18n="menuAssignment">Assignment & Notes</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-holidays')">
+                    <span class="nav-icon">🌴</span> <span data-i18n="menuHolidays">Holiday Calendar</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-fees')">
+                    <span class="nav-icon">💳</span> <span data-i18n="menuFees">Fee Status</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-gallery-mgmt')">
+                    <span class="nav-icon">🖼️</span> <span data-i18n="menuGalleryMgmt">Tuition Gallery</span>
+                </button>
+                <button class="nav-item" onclick="window.navigateTo('view-suggestions')">
+                    <span class="nav-icon">💬</span> <span data-i18n="menuSuggestions">Ask Doubts / Feedback</span>
+                </button>
+                <button class="nav-item staff-only-btn" id="menu-web-editor-link" onclick="window.navigateTo('view-web-editor')">
+                    <span class="nav-icon">✏️</span> <span data-i18n="menuWebEditor">Website & Details Editor</span>
+                </button>
+                <button class="nav-item staff-only-btn" id="menu-settings-link" onclick="window.navigateTo('view-admin-settings')">
+                    <span class="nav-icon">⚙️</span> <span data-i18n="menuSettings">Batch Passwords & Settings</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-badge">
+                    <div class="user-avatar-dot"></div>
+                    <div class="user-info-text">
+                        <strong id="user-display-name">Girls Batch</strong>
+                        <span id="user-badge" class="badge-role">Student Portal</span>
+                    </div>
+                </div>
+                <button class="btn-3d btn-logout btn-sm btn-full" onclick="window.logout()" data-i18n="logoutBtn">Log Out</button>
+            </div>
+        </aside>
+
+        <main class="viewport-content">
+            <header class="card-3d app-header">
+                <div class="header-breadcrumb">
+                    <span class="text-muted" id="header-school-name" data-i18n="brandTitle">Educare Group Tuition</span> / 
+                    <strong id="active-breadcrumb" data-i18n="menuHome">Dashboard Home</strong>
+                </div>
+                <div class="header-right-tools">
+                    <button class="btn-3d btn-secondary btn-sm" onclick="window.returnToPublicSite()">🌐 <span data-i18n="btnBackToSite">Public Website</span></button>
+                    <button class="lang-toggle-btn" onclick="window.cycleLanguage()">🌐 <span id="current-lang-tag">EN</span></button>
+                </div>
+            </header>
+
+            <!-- VIEW 1: HOME & ATTENDANCE GRAPH -->
+            <section id="view-home" class="view-panel active">
+                <div class="welcome-hero-card card-3d">
+                    <div class="hero-left">
+                        <span class="hero-tag" data-i18n="heroWelcomeTag">OFFICIAL EDUCARE PORTAL</span>
+                        <h1 id="welcome-banner-school-title">Welcome to Educare Group Tuition</h1>
+                        <p id="welcome-banner-desc">Dedicated coaching portal with 12 modules, daily attendance analytics, homework trackers, and weekly test series.</p>
+                        <div class="hero-quick-actions" id="admin-quick-actions">
+                            <button class="btn-3d btn-primary staff-only-btn" onclick="window.navigateTo('view-batch-mgmt')">+ Enroll Student</button>
+                            <button class="btn-3d btn-secondary staff-only-btn" onclick="window.navigateTo('view-attendance')">Mark Attendance</button>
+                            <button class="btn-3d btn-secondary staff-only-btn" onclick="window.openManagePasswordsModal()">Manage Passwords 🔑</button>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="metric-cube-3d">
+                            <span class="metric-number" id="stat-total-students">0</span>
+                            <span class="metric-label" id="stat-student-label">Batch Students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12 ICONS LAUNCHER GRID (Shree Ambica Vidhyalaya 3D Styling) -->
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3 data-i18n="tuitionModulesHeading">Tuition Classroom Modules</h3>
+                            <p class="text-muted" data-i18n="tuitionModulesSub">Quick access to all 12 smart tuition management modules</p>
+                        </div>
+                        <span class="badge-role" id="portal-role-badge">Verified Session</span>
+                    </div>
+
+                    <div class="modules-tiles-grid">
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-batch-mgmt')">
+                            <div class="tile-icon bg-pink-tint"><i class="fa-solid fa-user-graduate"></i></div>
+                            <h4>Profile / Batch</h4>
+                            <small>Student Directory</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-homework')">
+                            <div class="tile-icon bg-amber-tint"><i class="fa-solid fa-book-open"></i></div>
+                            <h4>Home Work</h4>
+                            <small>Daily Tasks & Due Dates</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-notices')">
+                            <div class="tile-icon bg-purple-tint"><i class="fa-solid fa-bullhorn"></i></div>
+                            <h4>NoticeBoard</h4>
+                            <small>Announcements</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-tests')">
+                            <div class="tile-icon bg-emerald-tint"><i class="fa-solid fa-square-poll-vertical"></i></div>
+                            <h4>TestResult</h4>
+                            <small>Weekly Exam Marks</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-marksheet')">
+                            <div class="tile-icon bg-blue-tint"><i class="fa-solid fa-file-lines"></i></div>
+                            <h4>MarkSheet</h4>
+                            <small>Progress Scorecards</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-attendance')">
+                            <div class="tile-icon bg-rose-tint"><i class="fa-solid fa-clipboard-user"></i></div>
+                            <h4>Attendance</h4>
+                            <small>Daily Roll Call & Log</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-assignment')">
+                            <div class="tile-icon bg-yellow-tint"><i class="fa-solid fa-file-arrow-down"></i></div>
+                            <h4>Assignment</h4>
+                            <small>Study Materials & Drive</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-holidays')">
+                            <div class="tile-icon bg-teal-tint"><i class="fa-solid fa-umbrella-beach"></i></div>
+                            <h4>Holiday</h4>
+                            <small>Annual Calendar</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-fees')">
+                            <div class="tile-icon bg-indigo-tint"><i class="fa-solid fa-receipt"></i></div>
+                            <h4>Fee Status</h4>
+                            <small>Monthly Billing Logs</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-gallery-mgmt')">
+                            <div class="tile-icon bg-violet-tint"><i class="fa-solid fa-images"></i></div>
+                            <h4>Gallery</h4>
+                            <small>Photos & Videos</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-suggestions')">
+                            <div class="tile-icon bg-lime-tint"><i class="fa-solid fa-comment-dots"></i></div>
+                            <h4>Suggestion</h4>
+                            <small>Ask Doubts to Tutor</small>
+                        </button>
+                        <button class="module-tile-card card-3d" onclick="window.navigateTo('view-about-tuition')">
+                            <div class="tile-icon bg-sky-tint"><i class="fa-solid fa-circle-info"></i></div>
+                            <h4>About Us</h4>
+                            <small>Batch Timings & Info</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Attendance Analytics Bar Graph -->
+                <div class="card-3d content-card chart-analytics-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3 data-i18n="chartHeading">Attendance Analytics (Standard-wise Bar Graph)</h3>
+                            <p class="text-muted" data-i18n="chartSub">Real-time attendance ratio across standards in current batch</p>
+                        </div>
+                        <span class="badge-role">Local Storage Realtime Sync</span>
+                    </div>
+                    <div class="bar-chart-container" id="attendance-bar-chart"></div>
+                </div>
+
+                <div class="dashboard-grid-3d">
+                    <div class="card-3d summary-card">
+                        <h3 data-i18n="homeRecentNotices">Latest Tuition Notices</h3>
+                        <ul class="bullet-list-3d" id="home-notices-list"></ul>
+                    </div>
+                    <div class="card-3d summary-card">
+                        <h3 data-i18n="homeUpcomingHolidays">Upcoming Academic Holidays</h3>
+                        <ul class="bullet-list-3d" id="home-holidays-list"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 2: PROFILE / BATCH MANAGEMENT -->
+            <section id="view-batch-mgmt" class="view-panel">
+                <!-- Teacher Enrollment Card -->
+                <div id="admin-enrollment-card" class="card-3d content-card staff-only-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Student Batch Enrollment</h3>
+                            <p class="text-muted">Register students with batch division, standard, subjects, and timings</p>
+                        </div>
+                        <span class="badge-role">Teacher Clearance</span>
+                    </div>
+
+                    <div class="form-grid-3d">
+                        <div class="input-wrapper">
+                            <label class="field-label">Batch Division *</label>
+                            <select id="new_st_batch" class="input-field-3d">
+                                <option value="Girls">Girls Batch</option>
+                                <option value="Boys">Boys Batch</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Student Full Name *</label>
+                            <input type="text" id="new_st_name" class="input-field-3d" placeholder="e.g. Diya Patel / Rahul Sharma">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Standard *</label>
+                            <select id="new_st_std" class="input-field-3d">
+                                <option value="8th">8th Standard</option>
+                                <option value="9th">9th Standard</option>
+                                <option value="10th" selected>10th Standard</option>
+                                <option value="11th-Commerce">11th Commerce</option>
+                                <option value="11th-Science">11th Science</option>
+                                <option value="12th-Commerce">12th Commerce</option>
+                                <option value="12th-Science">12th Science</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Subjects Enrolled *</label>
+                            <input type="text" id="new_st_sub" class="input-field-3d" placeholder="Maths, Science" value="Maths, Science">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Batch Timing</label>
+                            <input type="text" id="new_st_time" class="input-field-3d" placeholder="4:00 PM - 5:30 PM" value="4:00 PM">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Emergency Phone Number</label>
+                            <input type="tel" id="new_st_phone" class="input-field-3d" placeholder="10-digit mobile" maxlength="10">
+                        </div>
+                        <div class="input-wrapper full-width-span">
+                            <button class="btn-3d btn-primary btn-full" onclick="window.addStudentRecord()">Enroll & Save Student Data</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Batch Directory -->
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3 id="batch-dir-title">Batch Student Directory</h3>
+                            <p class="text-muted" id="batch-dir-sub">Student records enrolled in this batch</p>
+                        </div>
+                        <!-- Teacher Batch Switcher Tabs -->
+                        <div id="teacher-batch-selector-box" class="staff-only-btn" style="display:none;">
+                            <div class="role-segmented-control" style="margin-bottom:0;">
+                                <button type="button" id="tbl-batch-girls" class="role-tab active" onclick="window.setTeacherBatchView('Girls')">Girls Batch</button>
+                                <button type="button" id="tbl-batch-boys" class="role-tab" onclick="window.setTeacherBatchView('Boys')">Boys Batch</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container-3d">
+                        <table class="data-table-3d">
+                            <thead>
+                                <tr><th>#</th><th>Student Name</th><th>Batch</th><th>Standard</th><th>Subjects</th><th>Timing</th><th>Phone</th><th class="staff-only-btn">Actions</th></tr>
+                            </thead>
+                            <tbody id="student-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 3: HOMEWORK MODULE -->
+            <section id="view-homework" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Daily Homework & Revision Tasks</h3>
+                            <p class="text-muted">Assigned academic practice and submission deadlines</p>
+                        </div>
+                        <button class="btn-3d btn-secondary btn-sm staff-only-btn" onclick="window.toggleHwForm()">+ Post Homework</button>
+                    </div>
+
+                    <div id="hw-publish-form" class="hidden-panel card-3d inner-form-card">
+                        <h4>Assign New Homework Task</h4>
+                        <div class="input-wrapper">
+                            <label class="field-label">Subject & Topic *</label>
+                            <input type="text" id="hw_sub" class="input-field-3d" placeholder="e.g. Mathematics - Ch 5 Quadratic Equations">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Submission Due Date *</label>
+                            <input type="text" id="hw_date" class="input-field-3d" placeholder="DD/MM/YYYY" maxlength="10" oninput="window.applyDateMask(this)">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Instructions & Questions *</label>
+                            <textarea id="hw_desc" class="input-field-3d" rows="3" placeholder="Solve exercise 5.2 questions 1 to 10 in homework register..."></textarea>
+                        </div>
+                        <div class="form-row-btns">
+                            <button class="btn-3d btn-primary" onclick="window.publishHomework()">Publish Task</button>
+                            <button class="btn-3d btn-secondary" onclick="window.toggleHwForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="notices-feed-grid" id="homework-feed"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 4: NOTICE BOARD -->
+            <section id="view-notices" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3 data-i18n="noticeTitle">Tuition Notice Board</h3>
+                            <p class="text-muted">Important circulars, exam announcements, and holiday notices</p>
+                        </div>
+                        <button class="btn-3d btn-secondary btn-sm staff-only-btn" onclick="window.toggleNoticeForm()">+ Post Notice</button>
+                    </div>
+
+                    <div id="notice-publish-form" class="hidden-panel card-3d inner-form-card">
+                        <h4>Publish Official Tuition Notice</h4>
+                        <div class="input-wrapper">
+                            <label class="field-label">Date (Mandatory) *</label>
+                            <input type="text" id="notice-date" class="input-field-3d" placeholder="DD/MM/YYYY" maxlength="10" oninput="window.applyDateMask(this)">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Notice Title *</label>
+                            <input type="text" id="notice-title" class="input-field-3d" placeholder="e.g. Special Sunday Board Revision Class">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Details</label>
+                            <textarea id="notice-body" class="input-field-3d" rows="3" placeholder="Detailed announcement..."></textarea>
+                        </div>
+                        <div class="form-row-btns">
+                            <button class="btn-3d btn-primary" onclick="window.publishNotice()">Publish Notice</button>
+                            <button class="btn-3d btn-secondary" onclick="window.toggleNoticeForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="notices-feed-grid" id="notices-feed"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 5: TEST RESULTS -->
+            <section id="view-tests" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Weekly & Unit Test Scores</h3>
+                            <p class="text-muted">Individual exam performance, marks obtained, and percentages</p>
+                        </div>
+                        <button class="btn-3d btn-primary btn-sm staff-only-btn" onclick="window.openAddTestModal()">+ Record Test Score</button>
+                    </div>
+
+                    <div class="table-container-3d">
+                        <table class="data-table-3d">
+                            <thead>
+                                <tr><th>#</th><th>Student Name</th><th>Standard</th><th>Test Title & Subject</th><th>Marks Obtained</th><th>Total</th><th>Percentage</th><th class="staff-only-btn">Action</th></tr>
+                            </thead>
+                            <tbody id="test-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 6: MARKSHEET -->
+            <section id="view-marksheet" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Cumulative Performance Marksheets</h3>
+                            <p class="text-muted">Consolidated academic records across all tests</p>
+                        </div>
+                    </div>
+                    <div class="notices-feed-grid" id="marksheet-feed"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 7: ATTENDANCE REGISTER -->
+            <section id="view-attendance" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3 data-i18n="attTitle">Daily Digital Attendance Register</h3>
+                            <p class="text-muted">Instant single-click roll call with automatic toggle & bulk actions</p>
+                        </div>
+                        <div class="attendance-controls">
+                            <input type="text" id="att-date" class="input-field-3d input-sm" placeholder="DD/MM/YYYY" maxlength="10" oninput="window.applyDateMask(this)">
+                            <select id="att-standard-filter" class="input-field-3d input-sm" onchange="window.loadAttendanceRoster()">
+                                <option value="8th">8th Standard</option>
+                                <option value="9th">9th Standard</option>
+                                <option value="10th" selected>10th Standard</option>
+                                <option value="11th-Commerce">11th Commerce</option>
+                                <option value="11th-Science">11th Science</option>
+                                <option value="12th-Commerce">12th Commerce</option>
+                                <option value="12th-Science">12th Science</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="attendance-bulk-bar staff-only-btn">
+                        <button class="btn-3d btn-secondary btn-sm" onclick="window.markBulkAttendance('Present')">✓ Mark All Present</button>
+                        <button class="btn-3d btn-secondary btn-sm" onclick="window.markBulkAttendance('Absent')">✗ Mark All Absent</button>
+                    </div>
+
+                    <div class="table-container-3d">
+                        <table class="data-table-3d">
+                            <thead>
+                                <tr><th>#</th><th>Student Name</th><th>Batch</th><th>Status</th><th class="staff-only-btn">Quick [P / A]</th></tr>
+                            </thead>
+                            <tbody id="attendance-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 8: ASSIGNMENT & NOTES -->
+            <section id="view-assignment" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Assignments & Digital Study Notes</h3>
+                            <p class="text-muted">Downloadable revision papers, formula sheets, and PDF links</p>
+                        </div>
+                        <button class="btn-3d btn-secondary btn-sm staff-only-btn" onclick="window.toggleAssignForm()">+ Add Assignment</button>
+                    </div>
+
+                    <div id="assign-publish-form" class="hidden-panel card-3d inner-form-card">
+                        <h4>Upload Study Material / Assignment</h4>
+                        <div class="input-wrapper">
+                            <label class="field-label">Material / Assignment Title *</label>
+                            <input type="text" id="asg_title" class="input-field-3d" placeholder="e.g. 10th Board Science Important Diagrams PDF">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Google Drive / File URL (Optional)</label>
+                            <input type="url" id="asg_link" class="input-field-3d" placeholder="https://drive.google.com/...">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Description & Chapters</label>
+                            <textarea id="asg_desc" class="input-field-3d" rows="2" placeholder="Practice questions for chapters 1 to 4..."></textarea>
+                        </div>
+                        <div class="form-row-btns">
+                            <button class="btn-3d btn-primary" onclick="window.publishAssignment()">Save Assignment</button>
+                            <button class="btn-3d btn-secondary" onclick="window.toggleAssignForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="notices-feed-grid" id="assignment-feed"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 9: HOLIDAYS -->
+            <section id="view-holidays" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3 data-i18n="hldTitle">Annual & Festival Holiday Schedule</h3>
+                            <p class="text-muted">Official tuition vacation dates and festival schedules</p>
+                        </div>
+                        <button class="btn-3d btn-secondary btn-sm staff-only-btn" onclick="window.toggleHolidayForm()">+ Add Holiday</button>
+                    </div>
+
+                    <div id="holiday-add-form" class="hidden-panel card-3d inner-form-card">
+                        <h4>Add Holiday Record</h4>
+                        <div class="input-wrapper">
+                            <label class="field-label">Date (Mandatory) *</label>
+                            <input type="text" id="hld-date" class="input-field-3d" placeholder="DD/MM/YYYY" maxlength="10" oninput="window.applyDateMask(this)">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Holiday Name / Occasion *</label>
+                            <input type="text" id="hld-name" class="input-field-3d" placeholder="e.g. Diwali Vacation / Uttarayan">
+                        </div>
+                        <div class="form-row-btns">
+                            <button class="btn-3d btn-primary" onclick="window.addHolidayRecord()">Save Holiday</button>
+                            <button class="btn-3d btn-secondary" onclick="window.toggleHolidayForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="holiday-roster-grid" id="holiday-roster"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 10: FEE STATUS -->
+            <section id="view-fees" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Monthly Fee Status Register</h3>
+                            <p class="text-muted">Fee clearance and payment status tracking</p>
+                        </div>
+                        <div class="flex-between gap-3">
+                            <select id="fee-month-selector" class="input-field-3d input-sm" style="margin-bottom:0;" onchange="window.loadFeeRoster()">
+                                <option value="August">August 2026</option>
+                                <option value="September">September 2026</option>
+                                <option value="October" selected>October 2026</option>
+                                <option value="November">November 2026</option>
+                                <option value="December">December 2026</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-container-3d">
+                        <table class="data-table-3d">
+                            <thead>
+                                <tr><th>#</th><th>Student Name</th><th>Batch</th><th>Standard</th><th>Month</th><th>Status</th><th class="staff-only-btn">Toggle Status</th></tr>
+                            </thead>
+                            <tbody id="fee-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 11: CAMPUS GALLERY MANAGER -->
+            <section id="view-gallery-mgmt" class="view-panel">
+                <div class="card-3d content-card staff-only-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Tuition Photo & Video Gallery Manager</h3>
+                            <p class="text-muted">Upload classroom photos and test session videos (Strictly PNG, JPG, JPEG & MP4 allowed)</p>
+                        </div>
+                        <span class="badge-role">Staff Clearance</span>
+                    </div>
+
+                    <div class="form-grid-3d">
+                        <div class="input-wrapper">
+                            <label class="field-label">Media Title / Event Name *</label>
+                            <input type="text" id="gal_item_title" class="input-field-3d" placeholder="e.g. Science Experiment Session / Toppers Felicitation">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Media Type *</label>
+                            <select id="gal_item_type" class="input-field-3d">
+                                <option value="photo">Photo (.png, .jpg, .jpeg)</option>
+                                <option value="video">Video (.mp4, .webm)</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper full-width-span">
+                            <label class="field-label">Choose File *</label>
+                            <input type="file" id="gal_item_file" class="input-field-3d" accept=".png,.jpg,.jpeg,image/png,image/jpeg,video/mp4,video/webm">
+                        </div>
+                        <div class="input-wrapper full-width-span">
+                            <button class="btn-3d btn-primary btn-full" onclick="window.uploadGalleryItem()">Upload Item to Gallery 🚀</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Active Classroom Gallery</h3>
+                            <p class="text-muted">Browse and manage tuition photos & activity videos</p>
+                        </div>
+                    </div>
+                    <div class="public-gallery-grid" id="portal-gallery-grid"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 12: SUGGESTION / ASK DOUBTS -->
+            <section id="view-suggestions" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Ask Doubts & Student Queries</h3>
+                            <p class="text-muted">Students can send direct questions to the teacher for doubt clearance</p>
+                        </div>
+                        <button class="btn-3d btn-primary btn-sm" onclick="window.toggleDoubtForm()">+ Ask a Doubt</button>
+                    </div>
+
+                    <div id="doubt-add-form" class="hidden-panel card-3d inner-form-card">
+                        <h4>Submit Question / Feedback to Teacher</h4>
+                        <div class="input-wrapper">
+                            <label class="field-label">Student Name *</label>
+                            <input type="text" id="doubt_st_name" class="input-field-3d" placeholder="Enter your name">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Subject & Topic *</label>
+                            <input type="text" id="doubt_sub" class="input-field-3d" placeholder="e.g. Maths - Theorem 6.1 Proof">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Question Details *</label>
+                            <textarea id="doubt_msg" class="input-field-3d" rows="3" placeholder="Explain where you are facing difficulty..."></textarea>
+                        </div>
+                        <div class="form-row-btns">
+                            <button class="btn-3d btn-primary" onclick="window.submitDoubt()">Send Doubt to Teacher</button>
+                            <button class="btn-3d btn-secondary" onclick="window.toggleDoubtForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="notices-feed-grid" id="doubts-feed"></div>
+                </div>
+            </section>
+
+            <!-- VIEW 13: ABOUT TUITION -->
+            <section id="view-about-tuition" class="view-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>About Educare Group Tuition</h3>
+                            <p class="text-muted">Institutional overview, batch timings, and academic policies</p>
+                        </div>
+                    </div>
+                    <div class="about-tuition-details">
+                        <div class="about-hero-box">
+                            <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egBlueGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230284c7%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%232563eb%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231e3a8a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22egGoldGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23f59e0b%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23b45309%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22egGlow%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%224%22%20stdDeviation%3D%226%22%20flood-color%3D%22%230284c7%22%20flood-opacity%3D%220.3%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3C%21--%20Outer%20Shield%20Crest%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2012%20C148%2012%20182%2028%20182%2075%20C182%20135%20128%20178%20100%20192%20C72%20178%2018%20135%2018%2075%20C18%2028%2052%2012%20100%2012%20Z%22%20fill%3D%22url%28%23egBlueGrad%29%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%224.5%22%20filter%3D%22url%28%23egGlow%29%22/%3E%0A%20%20%3C%21--%20Inner%20Shield%20Trim%20--%3E%0A%20%20%3Cpath%20d%3D%22M100%2022%20C140%2022%20170%2036%20170%2076%20C170%20128%20122%20166%20100%20178%20C78%20166%2030%20128%2030%2076%20C30%2036%2060%2022%20100%2022%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.5%22/%3E%0A%20%20%3C%21--%20Graduation%20Cap%20Top%20--%3E%0A%20%20%3Cpolygon%20points%3D%22100%2C42%20146%2C58%20100%2C74%2054%2C58%22%20fill%3D%22url%28%23egGoldGrad%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M100%2C74%20L100%2C90%20C100%2C98%20128%2C104%20138%2C92%20L138%2C70%22%20fill%3D%22none%22%20stroke%3D%22url%28%23egGoldGrad%29%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Ccircle%20cx%3D%22146%22%20cy%3D%2274%22%20r%3D%223.5%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%3C%21--%20Open%20Book%20Symbol%20--%3E%0A%20%20%3Cpath%20d%3D%22M68%20116%20C80%20110%2094%20112%20100%20118%20C106%20112%20120%20110%20132%20116%20L132%20136%20C120%20130%20106%20132%20100%20138%20C94%20132%2080%20130%2068%20136%20Z%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.95%22/%3E%0A%20%20%3C%21--%20Monogram%20EG%20Text%20--%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22104%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22900%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221%22%3EEG%3C/text%3E%0A%20%20%3C%21--%20Ribbon%20Banner%20Bottom%20--%3E%0A%20%20%3Crect%20x%3D%2242%22%20y%3D%22146%22%20width%3D%22116%22%20height%3D%2220%22%20rx%3D%2210%22%20fill%3D%22url%28%23egGoldGrad%29%22/%3E%0A%20%20%3Ctext%20x%3D%22100%22%20y%3D%22160%22%20font-family%3D%22%27Plus%20Jakarta%20Sans%27%2C%20Arial%2C%20sans-serif%22%20font-size%3D%228.5%22%20font-weight%3D%22800%22%20fill%3D%22%231e1b4b%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%221.2%22%3EEDUCARE%20TUITION%3C/text%3E%0A%3C/svg%3E" alt="Educare Logo" style="width:72px; height:72px;">
+                            <div>
+                                <h2>Educare Group Tuition</h2>
+                                <p class="text-muted">Premier Coaching for Standards 8th to 12th • Ahmedabad, Gujarat</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-grid-3d" style="margin-top:20px;">
+                            <div class="card-3d summary-card">
+                                <h4>👧 Girls Batch Timings</h4>
+                                <p style="margin-top:8px; font-size:13px; line-height:1.6; color:#475569;">
+                                    <strong>Hours:</strong> 4:00 PM to 5:30 PM (Mon to Sat)<br>
+                                    <strong>Focus:</strong> Dedicated calm classroom environment, concept clarity, daily homework checking, and personal problem-solving.
+                                </p>
+                            </div>
+                            <div class="card-3d summary-card">
+                                <h4>👦 Boys Batch Timings</h4>
+                                <p style="margin-top:8px; font-size:13px; line-height:1.6; color:#475569;">
+                                    <strong>Hours:</strong> 5:30 PM to 7:00 PM (Mon to Sat)<br>
+                                    <strong>Focus:</strong> High-energy competitive drills, previous years board question papers, and weekly mock exams.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 14: WEBSITE & DETAILS LIVE EDITOR (STAFF ONLY) -->
+            <section id="view-web-editor" class="view-panel staff-only-panel">
+                <div class="card-3d content-card">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Public Website, Tuition Details & Background Live Editor</h3>
+                            <p class="text-muted">Change Tuition Name, Tagline, Address, Phone, Email, Google Map, and Background Wallpaper live</p>
+                        </div>
+                        <span class="badge-role">Teacher Authorized</span>
+                    </div>
+
+                    <div class="form-grid-3d">
+                        <div class="input-wrapper">
+                            <label class="field-label">Official Tuition Name *</label>
+                            <input type="text" id="edit-web-schoolname" class="input-field-3d" placeholder="Educare Group Tuition">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Tagline / Subtitle *</label>
+                            <input type="text" id="edit-web-schoolsubtag" class="input-field-3d" placeholder="Ahmedabad, Gujarat • Dedicated Coaching For Standards 8th to 12th">
+                        </div>
+
+                        <!-- Tuition Background Photo & Opacity Settings -->
+                        <div class="input-wrapper full-width-span inner-form-card" style="border: 2px solid #bae6fd;">
+                            <h4 style="color:#0284c7; margin-bottom: 8px;">🎨 Tuition Background Wallpaper & Transparency</h4>
+                            <label class="field-label">Upload Classroom / Academy Background Photo (.png, .jpg, .jpeg)</label>
+                            <input type="file" id="edit-web-bg-photo" class="input-field-3d" accept=".png,.jpg,.jpeg,image/png,image/jpeg" onchange="window.handleBgPhotoUpload(this)">
+                            
+                            <div style="margin-top: 10px;">
+                                <label class="field-label">Background Photo Opacity (Visibility): <span id="bg-opacity-val-label">20%</span></label>
+                                <input type="range" id="edit-web-bg-opacity" min="0" max="100" value="20" class="range-slider-pro" oninput="window.updateBgOpacityPreview(this.value)">
+                                <small class="text-muted">Controls background visibility without affecting readability of text.</small>
+                            </div>
+                        </div>
+
+                        <div class="input-wrapper full-width-span">
+                            <label class="field-label">Top Announcement Ribbon Text</label>
+                            <input type="text" id="edit-web-topribbon" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Hero Badge Tag</label>
+                            <input type="text" id="edit-web-herobadge" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Hero Main Title</label>
+                            <input type="text" id="edit-web-herotitle" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper full-width-span">
+                            <label class="field-label">Hero Subtitle / Description</label>
+                            <textarea id="edit-web-herodesc" class="input-field-3d" rows="2"></textarea>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label class="field-label">Helpline Phone Number</label>
+                            <input type="text" id="edit-web-phone" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Official Email Address</label>
+                            <input type="email" id="edit-web-email" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Tuition Working Hours</label>
+                            <input type="text" id="edit-web-hours" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="field-label">Campus Card Overlay Title</label>
+                            <input type="text" id="edit-web-campustitle" class="input-field-3d">
+                        </div>
+                        <div class="input-wrapper full-width-span">
+                            <label class="field-label">Center Physical Address</label>
+                            <textarea id="edit-web-address" class="input-field-3d" rows="2"></textarea>
+                        </div>
+                        <div class="input-wrapper full-width-span">
+                            <label class="field-label">Embedded Google Maps URL (iframe src)</label>
+                            <input type="text" id="edit-web-mapurl" class="input-field-3d">
+                        </div>
+
+                        <div class="input-wrapper full-width-span" style="margin-top: 10px;">
+                            <button class="btn-3d btn-primary btn-full" onclick="window.saveWebsiteContentToCloud()">💾 Save & Publish Changes Live</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 15: SECURITY SETTINGS & BATCH PASSWORDS (STAFF ONLY) -->
+            <section id="view-admin-settings" class="view-panel staff-only-panel">
+                <div class="card-3d content-card" style="max-width: 680px; margin: 0 auto 28px;">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Batch Passwords Management</h3>
+                            <p class="text-muted">Change passwords for Girls Batch, Boys Batch, and Teacher access</p>
+                        </div>
+                        <span class="badge-role">Master Teacher</span>
+                    </div>
+
+                    <div class="form-grid-3d" style="grid-template-columns: 1fr;">
+                        <div>
+                            <label class="field-label">Girls Batch Password</label>
+                            <input type="text" id="cfg-girls-pass" class="input-field-3d" placeholder="Girls Batch Password">
+                        </div>
+                        <div>
+                            <label class="field-label">Boys Batch Password</label>
+                            <input type="text" id="cfg-boys-pass" class="input-field-3d" placeholder="Boys Batch Password">
+                        </div>
+                        <div>
+                            <label class="field-label">Teacher Login Password</label>
+                            <input type="text" id="cfg-teacher-pass" class="input-field-3d" placeholder="Teacher Password">
+                        </div>
+                        <button class="btn-3d btn-primary btn-full" onclick="window.saveBatchPasswords()">Update Batch Passwords</button>
+                    </div>
+                </div>
+
+                <div class="card-3d content-card" style="max-width: 680px; margin: 0 auto;">
+                    <div class="card-title-row">
+                        <div>
+                            <h3>Backup & Data Reset</h3>
+                            <p class="text-muted">Export tuition records as JSON or reset to default state</p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button class="btn-3d btn-secondary" style="flex:1;" onclick="window.exportBackupJSON()">📥 Download Backup JSON</button>
+                        <button class="btn-3d btn-danger" style="flex:1;" onclick="window.resetTuitionData()">🗑️ Reset Database</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Record Test Score Modal -->
+    <div id="add-test-modal" class="modal-backdrop" style="display: none;" onclick="window.handleModalBackdropClick(event, 'add-test-modal')">
+        <div class="modal-card-solid" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>Record Test Score</h3>
+                <button type="button" class="modal-close-corner" onclick="window.closeAddTestModal()">✕</button>
+            </div>
+            <div class="modal-body-scroll">
+                <label class="field-label">Select Student *</label>
+                <select id="modal_test_student" class="input-field-3d"></select>
+                <label class="field-label">Test Title & Subject *</label>
+                <input type="text" id="modal_test_title" class="input-field-3d" placeholder="e.g. Unit Test 1 - Maths">
+                <div style="display:flex; gap:10px;">
+                    <div style="flex:1;">
+                        <label class="field-label">Marks Obtained *</label>
+                        <input type="number" id="modal_test_marks" class="input-field-3d" placeholder="e.g. 45">
+                    </div>
+                    <div style="flex:1;">
+                        <label class="field-label">Total Marks *</label>
+                        <input type="number" id="modal_test_total" class="input-field-3d" value="50">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 14px;">
+                    <button type="button" class="btn-3d btn-primary" style="flex: 1;" onclick="window.saveTestRecord()">Save Test Score</button>
+                    <button type="button" class="btn-3d btn-secondary" style="flex: 1;" onclick="window.closeAddTestModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Student Record Modal -->
+    <div id="edit-student-modal" class="modal-backdrop" style="display: none;" onclick="window.handleModalBackdropClick(event, 'edit-student-modal')">
+        <div class="modal-card-solid" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>Edit Student Record</h3>
+                <button type="button" class="modal-close-corner" onclick="window.closeEditModal()">✕</button>
+            </div>
+            <div class="modal-body-scroll">
+                <input type="hidden" id="edit-student-idx">
+                <label class="field-label">Student Name</label>
+                <input type="text" id="edit-st-name" class="input-field-3d" placeholder="Student Name">
+                <label class="field-label">Batch Division</label>
+                <select id="edit-st-batch" class="input-field-3d">
+                    <option value="Girls">Girls Batch</option>
+                    <option value="Boys">Boys Batch</option>
+                </select>
+                <label class="field-label">Standard</label>
+                <select id="edit-st-standard" class="input-field-3d">
+                    <option value="8th">8th Standard</option>
+                    <option value="9th">9th Standard</option>
+                    <option value="10th">10th Standard</option>
+                    <option value="11th-Commerce">11th Commerce</option>
+                    <option value="11th-Science">11th Science</option>
+                    <option value="12th-Commerce">12th Commerce</option>
+                    <option value="12th-Science">12th Science</option>
+                </select>
+                <label class="field-label">Subjects Enrolled</label>
+                <input type="text" id="edit-st-sub" class="input-field-3d" placeholder="Subjects">
+                <label class="field-label">Batch Timing</label>
+                <input type="text" id="edit-st-time" class="input-field-3d" placeholder="Timing">
+                <label class="field-label">Emergency Phone</label>
+                <input type="tel" id="edit-st-phone" class="input-field-3d" placeholder="Mobile">
+                
+                <div style="display: flex; gap: 10px; margin-top: 14px;">
+                    <button type="button" class="btn-3d btn-primary" style="flex: 1;" onclick="window.saveEditedStudentRecord()">Save Updates</button>
+                    <button type="button" class="btn-3d btn-secondary" style="flex: 1;" onclick="window.closeEditModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Passwords Quick Modal -->
+    <div id="modal-manage-passwords" class="modal-backdrop" style="display: none;" onclick="window.handleModalBackdropClick(event, 'modal-manage-passwords')">
+        <div class="modal-card-solid" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>Manage Batch Passwords</h3>
+                <button type="button" class="modal-close-corner" onclick="window.closeManagePasswordsModal()">✕</button>
+            </div>
+            <div class="modal-body-scroll">
+                <label class="field-label">Girls Batch Password</label>
+                <input type="text" id="quick-girls-pass" class="input-field-3d">
+                <label class="field-label">Boys Batch Password</label>
+                <input type="text" id="quick-boys-pass" class="input-field-3d">
+                <label class="field-label">Teacher Password</label>
+                <input type="text" id="quick-teacher-pass" class="input-field-3d">
+                <div style="display: flex; gap: 10px; margin-top: 14px;">
+                    <button type="button" class="btn-3d btn-primary" style="flex: 1;" onclick="window.saveQuickPasswords()">Save Passwords</button>
+                    <button type="button" class="btn-3d btn-secondary" style="flex: 1;" onclick="window.closeManagePasswordsModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// ==========================================================================
+// EDUCARE GROUP TUITION - STANDALONE JAVASCRIPT ENGINE (NO FIREBASE)
+// 12 Modules, Separate Girls & Boys Batches, 3 Batch Passwords, Realtime LocalStorage
+// ==========================================================================
+
+let activeRole = 'Girls'; // 'Girls' | 'Boys' | 'Teacher'
+let currentLanguage = 'en';
+let teacherSelectedBatch = 'Girls';
+
+const STORAGE_KEY = 'EDUCARE_TUITION_DATABASE_V1';
+const PASSWORDS_KEY = 'EDUCARE_BATCH_PASSWORDS_V1';
+
+// In-Memory Storage Fallback (Fixes Android Chrome content:// sandbox blocks)
+const _memStore = {};
+function safeGet(k) {
+    try { return localStorage.getItem(k); } catch(e) { return _memStore[k] || null; }
+}
+function safeSet(k, v) {
+    try { localStorage.setItem(k, v); } catch(e) { _memStore[k] = v; }
+}
+function safeRemove(k) {
+    try { localStorage.removeItem(k); } catch(e) { delete _memStore[k]; }
+}
+
+function getBatchPasswords() {
+    const saved = safeGet(PASSWORDS_KEY);
+    if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+    }
+    return {
+        Girls: 'girls123',
+        Boys: 'boys123',
+        Teacher: '1234'
+    };
+}
+
+let db = {
+    students: [
+        { id: 's_1', name: 'Diya Patel', batch: 'Girls', std: '10th', sub: 'Maths, Science', time: '4:00 PM', phone: '9876543210' },
+        { id: 's_2', name: 'Pooja Shah', batch: 'Girls', std: '10th', sub: 'Maths, Science', time: '4:00 PM', phone: '9876543211' },
+        { id: 's_3', name: 'Nisha Dave', batch: 'Girls', std: '12th-Commerce', sub: 'Accountancy, Stats', time: '4:00 PM', phone: '9876543212' },
+        { id: 's_4', name: 'Rahul Sharma', batch: 'Boys', std: '10th', sub: 'Maths, Science', time: '5:30 PM', phone: '9876543213' },
+        { id: 's_5', name: 'Aman Vaghela', batch: 'Boys', std: '10th', sub: 'Maths, Science', time: '5:30 PM', phone: '9876543214' },
+        { id: 's_6', name: 'Kunal Joshi', batch: 'Boys', std: '12th-Commerce', sub: 'Accountancy, Stats', time: '5:30 PM', phone: '9876543215' }
+    ],
+    homework: [
+        { id: 'h_1', sub: 'Mathematics (10th Std)', date: '05/10/2026', desc: 'Complete Ch 5 Quadratic Equations Exercise 5.2 - Questions 1 to 8 in practice book.' },
+        { id: 'h_2', sub: 'Science & Physics', date: '06/10/2026', desc: 'Draw and label Human Eye diagram and revise Refraction laws for tomorrow oral test.' }
+    ],
+    notices: [
+        { id: 'n_1', title: 'Welcome to Educare Group Tuition Session 2026-27', date: '01/10/2026', body: 'New academic batches have commenced! Daily homework submissions and weekly Sunday test series are compulsory for all students.' },
+        { id: 'n_2', title: 'Sunday Board Mock Test Schedule', date: '08/10/2026', body: 'Sunday mock test will be conducted for 10th and 12th standards from 09:00 AM to 12:00 PM.' }
+    ],
+    tests: [
+        { id: 't_1', studentId: 's_1', name: 'Diya Patel', batch: 'Girls', std: '10th', title: 'Maths Unit Test 1', marks: 46, total: 50 },
+        { id: 't_2', studentId: 's_2', name: 'Pooja Shah', batch: 'Girls', std: '10th', title: 'Maths Unit Test 1', marks: 44, total: 50 },
+        { id: 't_3', studentId: 's_4', name: 'Rahul Sharma', batch: 'Boys', std: '10th', title: 'Maths Unit Test 1', marks: 48, total: 50 }
+    ],
+    attendance: {},
+    assignments: [
+        { id: 'a_1', title: '10th Board Science Important Questions & Formulae', link: 'https://drive.google.com', desc: 'Comprehensive formula handbook covering Physics and Chemistry numericals.' }
+    ],
+    holidays: [
+        { id: 'hld_1', name: 'Diwali & Vikram Samvat New Year Break', date: '01/11/2026' },
+        { id: 'hld_2', name: 'Uttarayan Festival Holiday', date: '14/01/2027' }
+    ],
+    fees: {},
+    gallery: [
+        { id: 'g_1', title: 'Smart Classroom Lecture', type: 'photo', url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&auto=format&fit=crop&q=80' },
+        { id: 'g_2', title: 'Board Exam Preparation Lab', type: 'photo', url: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80' },
+        { id: 'g_3', title: 'Annual Topper Awards Felicitation', type: 'photo', url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80' }
+    ],
+    doubts: [
+        { id: 'd_1', name: 'Diya Patel', batch: 'Girls', sub: 'Mathematics', msg: 'Sir, please explain step 3 in Theorem 6.1 (BPT) again during tomorrow batch.' }
+    ],
+    website_content: {
+        schoolName: "Educare Group Tuition",
+        schoolSubtag: "Ahmedabad, Gujarat • Dedicated Coaching For Standards 8th to 12th",
+        topRibbon: "🎓 <strong>Admissions Open Session 2026-27</strong> • Standards 8 to 12 (Science & Commerce) • Separate Girls & Boys Batches",
+        heroBadge: "Disciplined Learning & High Score Focus",
+        heroTitle: "Building Foundations, Achieving Academic Heights",
+        heroDesc: "Educare Group Tuition offers result-oriented coaching with separate, distraction-free batches for Girls and Boys, weekly test analysis, dedicated doubt solving, and personalized student mentoring.",
+        phone: "9173830909",
+        email: "educaregrouptuition@gmail.com",
+        hours: "Monday to Saturday: 03:00 PM to 08:30 PM (Sunday Test Series)",
+        campusTitle: "Educare Smart Classroom",
+        campusTag: "Air-conditioned • CCTV Protected • Small Batch Sizes",
+        address: "Educare Group Tuition, Maninagar / Khokhra Area, Ahmedabad, Gujarat - 380008",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117502.85309623838!2d72.50808000490538!3d23.02396347306282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f221441595%3A0x67d87bc47970d624!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+        campusPhoto: null,
+        bgWallpaper: null,
+        bgOpacity: 18
+    }
+};
+
+const initialFaculty = [
+    { code: "TCH101", name: "Mr. Balendu V. Yagnik", qual: "M.Sc, B.Ed", exp: "18 Years", subject: "Mathematics & Physics", classteacher: "Head Tutor (Science)", phone: "9173830909" },
+    { code: "TCH102", name: "Mrs. Priyanka Joshi", qual: "M.Com, B.Ed", exp: "12 Years", subject: "Accountancy & Statistics", classteacher: "Commerce Mentor", phone: "9173830909" },
+    { code: "TCH103", name: "Mr. Rajesh Dave", qual: "M.A, B.Ed", exp: "15 Years", subject: "English & Social Studies", classteacher: "Senior Language Faculty", phone: "9173830909" }
+];
+
+function loadDatabase() {
+    const raw = safeGet(STORAGE_KEY);
+    if (raw) {
+        try {
+            const parsed = JSON.parse(raw);
+            db = { ...db, ...parsed };
+        } catch (e) {
+            console.error("Storage error:", e);
+        }
+    }
+    saveDatabase();
+}
+
+function saveDatabase() {
+    safeSet(STORAGE_KEY, JSON.stringify(db));
+}
+
+// 3-Language Dictionary for Educare
+const translations = {
+    en: {
+        topRibbon: "🎓 <strong>Admissions Open Session 2026-27</strong> • Standards 8 to 12 (Science & Commerce) • Separate Girls & Boys Batches",
+        brandTitle: "Educare Group Tuition",
+        brandSubtitle: "Ahmedabad, Gujarat • Dedicated Coaching For Standards 8th to 12th",
+        navAbout: "About Tuition",
+        navBatches: "Batches",
+        navFaculty: "Tutors",
+        navGallery: "Classroom Gallery",
+        navContact: "Contact",
+        navLogin: "Batch Portal Login 🔐",
+        heroPill: "Disciplined Learning & High Score Focus",
+        heroHeading: "Building Foundations, Achieving Academic Heights",
+        heroDescription: "Educare Group Tuition offers result-oriented coaching with separate, distraction-free batches for Girls and Boys, weekly test analysis, dedicated doubt solving, and personalized student mentoring.",
+        btnAdmissionInquiry: "Inquire For Admission",
+        btnStaffLogin: "Student & Teacher Portal",
+        statBoard: "Result Commitment",
+        statExp: "Dedicated Batches (Girls & Boys)",
+        statAttention: "Standards Focused",
+        artCardTitle: "Educare Smart Classroom",
+        artCardSubtitle: "Air-conditioned • CCTV Protected • Small Batch Sizes",
+        secPillBatches: "Specialized Divisions",
+        secHeadingBatches: "Separate Girls & Boys Batches",
+        secSubBatches: "Focused learning environments designed for maximum concentration and individual performance",
+        secPillFaculty: "Dedicated Mentors",
+        secHeadingFaculty: "Experienced Coaching Faculty",
+        secSubFaculty: "Subject specialists dedicated to building fundamental clarity and board exam readiness",
+        secPillGallery: "Classroom Moments",
+        secHeadingGallery: "Tuition Photo & Video Gallery",
+        secSubGallery: "Lectures, test sessions, student celebrations, and academic achievements",
+        secPillContact: "Visit Us",
+        secHeadingContact: "Tuition Center Location & Contact",
+        secSubContact: "Visit our classroom or call for batch timings and enrollment details",
+        lblAddress: "Center Address",
+        valAddress: "Educare Group Tuition, Maninagar / Khokhra Area, Ahmedabad, Gujarat - 380008",
+        lblPhone: "Admission Helpline Phone",
+        lblEmail: "Email Inquiries",
+        lblHours: "Tuition Timings",
+        valHours: "Monday to Saturday: 03:00 PM to 08:30 PM (Sunday Test Series)",
+        footerCopy: "© 2026 Educare Group Tuition. All Rights Reserved.",
+        footerPortal: "Batch Portal Login ➔",
+        loginSubtitle: "Dedicated Batch Access Portal",
+        selectLanguage: "Portal Language",
+        loginBtn: "Unlock Batch Portal 🚀",
+        menuHome: "Dashboard Home",
+        menuStudents: "Profile / Batch Directory",
+        menuHomework: "Home Work",
+        menuNotices: "Notice Board",
+        menuTestResults: "Test Results",
+        menuMarkSheet: "Progress Marksheet",
+        menuAttendance: "Attendance Register",
+        menuAssignment: "Assignment & Notes",
+        menuHolidays: "Holiday Calendar",
+        menuFees: "Fee Status",
+        menuGalleryMgmt: "Tuition Gallery",
+        menuSuggestions: "Ask Doubts / Feedback",
+        menuWebEditor: "Website & Details Editor",
+        menuSettings: "Batch Passwords & Settings",
+        logoutBtn: "Log Out",
+        btnBackToSite: "Public Website",
+        heroWelcomeTag: "OFFICIAL EDUCARE PORTAL",
+        tuitionModulesHeading: "Tuition Classroom Modules",
+        tuitionModulesSub: "Quick access to all 12 smart tuition management modules",
+        chartHeading: "Attendance Analytics (Standard-wise Bar Graph)",
+        chartSub: "Real-time attendance ratio across standards in current batch",
+        homeRecentNotices: "Latest Tuition Notices",
+        homeUpcomingHolidays: "Upcoming Academic Holidays",
+        attTitle: "Daily Digital Attendance Register",
+        noticeTitle: "Tuition Notice Board",
+        hldTitle: "Annual & Festival Holiday Schedule"
+    },
+    gu: {
+        topRibbon: "🎓 <strong>પ્રવેશ શરૂ સત્ર ૨૦૨૬-૨૭</strong> • ધોરણ ૮ થી ૧૨ (સાયન્સ & કોમર્સ) • ગર્લ્સ અને બોય્ઝ અલગ બેચ",
+        brandTitle: "એજ્યુકેર ગ્રૂપ ટ્યુશન",
+        brandSubtitle: "અમદાવાદ, ગુજરાત • ધોરણ ૮ થી ૧૨ નું ઉત્કૃષ્ટ કોચિંગ",
+        navAbout: "ટ્યુશન પરિચય",
+        navBatches: "બેચ વિગતો",
+        navFaculty: "શિક્ષક ગણ",
+        navGallery: "ક્લાસરૂમ ગેલેરી",
+        navContact: "સંપર્ક",
+        navLogin: "બેચ પોર્ટલ લૉગિન 🔐",
+        heroPill: "શિસ્તબદ્ધ શિક્ષણ અને શ્રેષ્ઠ પરિણામ",
+        heroHeading: "મજબૂત પાયો અને બોર્ડ પરીક્ષામાં સર્વોચ્ચ સિદ્ધિ",
+        heroDescription: "એજ્યુકેર ગ્રૂપ ટ્યુશનમાં ગર્લ્સ અને બોય્ઝ માટે સંપૂર્ણ અલગ વાતાવરણ, સાપ્તાહિક ટેસ્ટ સીરીઝ, વ્યક્તિગત માર્ગદર્શન અને અનુભવી વિષય નિષ્ણાત શિક્ષકો દ્વારા શિક્ષણ આપવામાં આવે છે.",
+        btnAdmissionInquiry: "પ્રવેશ માહિતી મેળવો",
+        btnStaffLogin: "વિદ્યાર્થી & શિક્ષક પોર્ટલ",
+        statBoard: "પરિણામ પ્રતિબદ્ધતા",
+        statExp: "અલગ બેચ (ગર્લ્સ & બોય્ઝ)",
+        statAttention: "ધોરણ ૮ થી ૧૨ કેન્દ્રિત",
+        artCardTitle: "એજ્યુકેર સ્માર્ટ ક્લાસરૂમ",
+        artCardSubtitle: "એર-કન્ડિશન્ડ • સીસીટીવી સુરક્ષિત • મર્યાદિત સંખ્યા",
+        secPillBatches: "વિશિષ્ટ બેચ વ્યવસ્થા",
+        secHeadingBatches: "ગર્લ્સ અને બોય્ઝ માટે સંપૂર્ણ અલગ બેચ",
+        secSubBatches: "ધ્યાન કેન્દ્રિત રહે તેવું સુરક્ષિત અને સ્પર્ધાત્મક વાતાવરણ",
+        secPillFaculty: "અનુભવી માર્ગદર્શક",
+        secHeadingFaculty: "અમારા વિદ્વાન ફેકલ્ટી",
+        secSubFaculty: "વિષયવાર પાયાની સ્પષ્ટતા અને બોર્ડ પરીક્ષાની સર્વોત્તમ તૈયારી",
+        secPillGallery: "ક્લાસરૂમ ક્ષણો",
+        secHeadingGallery: "ટ્યુશન ફોટો & વિડીયો ગેલેરી",
+        secSubGallery: "લેક્ચર્સ, ટેસ્ટ સત્રો અને વિદ્યાર્થીઓનું સન્માન",
+        secPillContact: "મુલાકાત લો",
+        secHeadingContact: "ટ્યુશન સેન્ટર સરનામું અને સંપર્ક",
+        secSubContact: "બેચ સમય અને પ્રવેશ માટે સીધો સંપર્ક કરો",
+        lblAddress: "સેન્ટર સરનામું",
+        valAddress: "એજ્યુકેર ગ્રૂપ ટ્યુશન, મણિનગર / ખોખરા વિસ્તાર, અમદાવાદ, ગુજરાત - 380008",
+        lblPhone: "પ્રવેશ હેલ્પલાઈન ફોન",
+        lblEmail: "ઈમેઈલ સંપર્ક",
+        lblHours: "ટ્યુશન સમય",
+        valHours: "સોમવાર થી શનિવાર: બપોરે ૦૩:૦૦ થી રાત્રે ૦૮:૩૦ (રવિવારે ટેસ્ટ સીરીઝ)",
+        footerCopy: "© 2026 એજ્યુકેર ગ્રૂપ ટ્યુશન. સર્વાધિકાર સુરક્ષિત.",
+        footerPortal: "બેચ પોર્ટલ લૉગિન ➔",
+        loginSubtitle: "બેચ આધારિત સુરક્ષિત પોર્ટલ",
+        selectLanguage: "પોર્ટલ ભાષા",
+        loginBtn: "બેચ પોર્ટલ ખોલો 🚀",
+        menuHome: "ડેશબોર્ડ મુખ્ય પૃષ્ઠ",
+        menuStudents: "પ્રોફાઇલ / બેચ રજિસ્ટ્રી",
+        menuHomework: "હોમવર્ક (Home Work)",
+        menuNotices: "સૂચના બોર્ડ (NoticeBoard)",
+        menuTestResults: "ટેસ્ટ પરિણામ (TestResult)",
+        menuMarkSheet: "પ્રગતિ પત્રક (MarkSheet)",
+        menuAttendance: "દૈનિક હાજરી પત્રક (Attendance)",
+        menuAssignment: "એસાઇનમેન્ટ & નોટ્સ",
+        menuHolidays: "રજાઓનું કેલેન્ડર (Holiday)",
+        menuFees: "ફી સ્ટેટસ (Fee Status)",
+        menuGalleryMgmt: "ટ્યુશન ગેલેરી (Gallery)",
+        menuSuggestions: "પ્રશ્નો પૂછો / ફિડબેક",
+        menuWebEditor: "વેબસાઇટ & વિગતો એડિટર",
+        menuSettings: "બેચ પાસવર્ડ & સેટિંગ્સ",
+        logoutBtn: "લૉગ આઉટ",
+        btnBackToSite: "વેબસાઇટ જુઓ",
+        heroWelcomeTag: "સત્તાવાર એજ્યુકેર પોર્ટલ",
+        tuitionModulesHeading: "ટ્યુશન ક્લાસરૂમ ૧૨ મોડ્યુલ્સ",
+        tuitionModulesSub: "બધા જ ૧૨ સ્માર્ટ મોડ્યુલ્સની ઝડપી ઍક્સેસ",
+        chartHeading: "સ્તંભાલેખ - ધોરણવાર હાજરી ગ્રાફ",
+        chartSub: "ચાલુ બેચના ધોરણોની લાઈવ હાજરી ટકાવારી",
+        homeRecentNotices: "તાજેતરની ટ્યુશન સૂચનાઓ",
+        homeUpcomingHolidays: "આગામી શૈક્ષણિક રજાઓ",
+        attTitle: "દૈનિક ડિજિટલ હાજરી રજિસ્ટર",
+        noticeTitle: "ટ્યુશન નોટિસ બોર્ડ",
+        hldTitle: "વાર્ષિક અને તહેવાર રજાઓની યાદી"
+    },
+    hi: {
+        topRibbon: "🎓 <strong>प्रवेश प्रारंभ सत्र २०२६-२७</strong> • कक्षा ८ से १२ (विज्ञान एवं वाणिज्य) • अलग गर्ल्स एवं बॉयज बैच",
+        brandTitle: "एजुकेयर ग्रुप ट्यूशन",
+        brandSubtitle: "अहमदाबाद, गुजरात • कक्षा ८ से १२ हेतु समर्पित कोचिंग",
+        navAbout: "ट्यूशन परिचय",
+        navBatches: "बैच विवरण",
+        navFaculty: "शिक्षक गण",
+        navGallery: "कक्षा गैलरी",
+        navContact: "संपर्क",
+        navLogin: "बैच पोर्टल लॉगिन 🔐",
+        heroPill: "अनुशासन एवं उच्च प्राप्तांक लक्ष्य",
+        heroHeading: "मजबूत आधार एवं बोर्ड परीक्षाओं में उत्कृष्ट परिणाम",
+        heroDescription: "एजुकेयर ग्रुप ट्यूशन में गर्ल्स एवं बॉयज हेतु पृथक वातावरण, साप्ताहिक टेस्ट श्रृंखला, व्यक्तिगत मार्गदर्शन एवं विषय विशेषज्ञों द्वारा कोचिंग दी जाती है।",
+        btnAdmissionInquiry: "प्रवेश पूछताछ",
+        btnStaffLogin: "छात्र एवं शिक्षक पोर्टल",
+        statBoard: "परिणाम प्रतिबद्धता",
+        statExp: "समर्पित बैच (गर्ल्स एवं बॉयज)",
+        statAttention: "कक्षा ८ से १२ केंद्रित",
+        artCardTitle: "एजुकेयर स्मार्ट क्लासरूम",
+        artCardSubtitle: "वातानुकूलित • सीसीटीवी सुरक्षित • सीमित छात्र संख्या",
+        secPillBatches: "विशेष बैच प्रभाग",
+        secHeadingBatches: "गर्ल्स एवं बॉयज हेतु पृथक बैच",
+        secSubBatches: "एकाग्रता एवं अधिकतम प्रदर्शन हेतु शांत और अनुशासित वातावरण",
+        secPillFaculty: "समर्पित शिक्षक",
+        secHeadingFaculty: "अनुभवी कोचिंग फैकल्टी",
+        secSubFaculty: "विषय अवधारणाओं की स्पष्टता एवं बोर्ड परीक्षा तैयारी",
+        secPillGallery: "कक्षा की झलकियां",
+        secHeadingGallery: "ट्यूशन फोटो एवं वीडियो गैलरी",
+        secSubGallery: "कक्षा शिक्षण, टेस्ट सत्र और मेधावी छात्र सम्मान",
+        secPillContact: "संपर्क",
+        secHeadingContact: "कोचिंग सेंटर का पता एवं संपर्क",
+        secSubContact: "बैच समय एवं प्रवेश जानकारी हेतु संपर्क करें",
+        lblAddress: "सेंटर का पता",
+        valAddress: "एजुकेयर ग्रुप ट्यूशन, मणिनगर / खोखरा क्षेत्र, अहमदाबाद, गुजरात - 380008",
+        lblPhone: "प्रवेश हेल्पलाइन फ़ोन",
+        lblEmail: "आधिकारिक ईमेल",
+        lblHours: "ट्यूशन समय",
+        valHours: "सोमवार से शनिवार: दोपहर ०३:०० से रात्रि ०८:३० (रविवार टेस्ट श्रृंखला)",
+        footerCopy: "© 2026 एजुकेयर ग्रुप ट्यूशन. सर्वाधिकार सुरक्षित.",
+        footerPortal: "बैच पोर्टल लॉगिन ➔",
+        loginSubtitle: "बैच आधारित सुरक्षित पोर्टल",
+        selectLanguage: "पोर्टल भाषा",
+        loginBtn: "बैच पोर्टल खोलें 🚀",
+        menuHome: "डैशबोर्ड मुख्य पृष्ठ",
+        menuStudents: "प्रोफाइल / बैच निर्देशिका",
+        menuHomework: "गृहकार्य (Home Work)",
+        menuNotices: "सूचना पट्ट (NoticeBoard)",
+        menuTestResults: "परीक्षा परिणाम (TestResult)",
+        menuMarkSheet: "प्रगति पत्रक (MarkSheet)",
+        menuAttendance: "दैनिक उपस्थिति रजिस्टर",
+        menuAssignment: "असाइनमेंट एवं नोट्स",
+        menuHolidays: "अवकाश कैलेंडर",
+        menuFees: "फीस स्थिति (Fee Status)",
+        menuGalleryMgmt: "ट्यूशन गैलरी",
+        menuSuggestions: "शंका समाधान / फीडबैक",
+        menuWebEditor: "वेबसाइट एवं विवरण संपादक",
+        menuSettings: "बैच पासवर्ड एवं सेटिंग्स",
+        logoutBtn: "लॉग आउट",
+        btnBackToSite: "वेबसाइट देखें",
+        heroWelcomeTag: "आधिकारिक एजुकेयर पोर्टल",
+        tuitionModulesHeading: "ट्यूशन क्लासरूम १२ मॉडयूल्स",
+        tuitionModulesSub: "सभी १२ स्मार्ट प्रबंधन मॉडयूल्स का त्वरित उपयोग",
+        chartHeading: "स्तंभालेख - कक्षावार उपस्थिति ग्राफ",
+        chartSub: "वर्तमान बैच के छात्रों का लाइव उपस्थिति अनुपात",
+        homeRecentNotices: "नवीनतम ट्यूशन सूचनाएं",
+        homeUpcomingHolidays: "आगामी शैक्षणिक अवकाश",
+        attTitle: "दैनिक डिजिटल उपस्थिति रजिस्टर",
+        noticeTitle: "ट्यूशन सूचना पट्ट",
+        hldTitle: "वार्षिक एवं उत्सव अवकाश सूची"
+    }
+};
+
+window.switchLanguage = function(lang) {
+    currentLanguage = lang;
+    document.body.className = `lang-${lang}`;
+
+    document.querySelectorAll('.btn-lang').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.toLowerCase().includes(lang));
+    });
+
+    document.querySelectorAll('.lang-tab').forEach((btn, idx) => {
+        const langs = ['en', 'gu', 'hi'];
+        btn.classList.toggle('active', langs[idx] === lang);
+    });
+
+    const tagEl = document.getElementById('current-lang-tag');
+    if (tagEl) tagEl.innerText = lang.toUpperCase();
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+
+    renderPublicFaculty();
+};
+
+window.cycleLanguage = function() {
+    const seq = ['en', 'gu', 'hi'];
+    const next = seq[(seq.indexOf(currentLanguage) + 1) % seq.length];
+    window.switchLanguage(next);
+};
+
+window.applyDateMask = function(input) {
+    let v = input.value.replace(/\D/g, '').slice(0, 8);
+    if (v.length >= 5) {
+        input.value = `${v.slice(0, 2)}/${v.slice(2, 4)}/${v.slice(4)}`;
+    } else if (v.length >= 3) {
+        input.value = `${v.slice(0, 2)}/${v.slice(2)}`;
+    } else {
+        input.value = v;
+    }
+};
+
+function formatToDDMMYYYY(d) {
+    if (!d) return '-';
+    if (d.includes('/')) return d;
+    const p = d.split('-');
+    return p.length === 3 ? `${p[2]}/${p[1]}/${p[0]}` : d;
+}
+
+// Modals
+window.openLoginModal = () => document.getElementById('login-modal').style.display = 'flex';
+window.closeLoginModal = () => document.getElementById('login-modal').style.display = 'none';
+
+window.closeEditModal = () => document.getElementById('edit-student-modal').style.display = 'none';
+window.openAddTestModal = () => {
+    populateTestStudentSelector();
+    document.getElementById('add-test-modal').style.display = 'flex';
+};
+window.closeAddTestModal = () => document.getElementById('add-test-modal').style.display = 'none';
+
+window.openManagePasswordsModal = () => {
+    const p = getBatchPasswords();
+    document.getElementById('quick-girls-pass').value = p.Girls;
+    document.getElementById('quick-boys-pass').value = p.Boys;
+    document.getElementById('quick-teacher-pass').value = p.Teacher;
+    document.getElementById('modal-manage-passwords').style.display = 'flex';
+};
+window.closeManagePasswordsModal = () => document.getElementById('modal-manage-passwords').style.display = 'none';
+
+window.handleModalBackdropClick = function(event, modalId) {
+    if (event.target.id === modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+};
+
+window.returnToPublicSite = function() {
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('public-landing-page').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// ==========================================================================
+// BATCH LOGIN (GIRLS, BOYS, TEACHER)
+// ==========================================================================
+let selectedLoginRole = 'Girls';
+
+window.selectBatchRole = function(role) {
+    selectedLoginRole = role;
+    document.getElementById('role-girls').classList.toggle('active', role === 'Girls');
+    document.getElementById('role-boys').classList.toggle('active', role === 'Boys');
+    document.getElementById('role-teacher').classList.toggle('active', role === 'Teacher');
+
+    const lbl = document.getElementById('batch-password-label');
+    if (role === 'Girls') lbl.innerText = 'Enter Girls Batch Password';
+    else if (role === 'Boys') lbl.innerText = 'Enter Boys Batch Password';
+    else lbl.innerText = 'Enter Teacher Master Password';
+    document.getElementById('login-password').value = '';
+};
+
+window.batchLogin = function() {
+    const p = document.getElementById('login-password').value.trim();
+    if (!p) return alert('Please enter password.');
+
+    const passwords = getBatchPasswords();
+
+    if (selectedLoginRole === 'Girls') {
+        if (p === passwords.Girls) {
+            openPortal('Girls');
+        } else {
+            alert('Incorrect Girls Batch Password! (Default: girls123)');
+        }
+    } else if (selectedLoginRole === 'Boys') {
+        if (p === passwords.Boys) {
+            openPortal('Boys');
+        } else {
+            alert('Incorrect Boys Batch Password! (Default: boys123)');
+        }
+    } else if (selectedLoginRole === 'Teacher') {
+        if (p === passwords.Teacher) {
+            openPortal('Teacher');
+        } else {
+            alert('Incorrect Teacher Password! (Default: 1234)');
+        }
+    }
+};
+
+function openPortal(role) {
+    activeRole = role;
+    safeSet('EDUCARE_ACTIVE_ROLE', role);
+
+    document.getElementById('login-modal').style.display = 'none';
+    document.getElementById('public-landing-page').style.display = 'none';
+    document.getElementById('main-content').style.display = 'flex';
+
+    const isTeacher = (role === 'Teacher');
+    document.querySelectorAll('.staff-only-btn').forEach(e => e.style.display = isTeacher ? '' : 'none');
+    document.querySelectorAll('.staff-only-card').forEach(e => e.style.display = isTeacher ? 'block' : 'none');
+
+    const topName = document.getElementById('user-display-name');
+    const topBadge = document.getElementById('user-badge');
+    const sidebarTag = document.getElementById('sidebar-batch-tag');
+    const roleBadge = document.getElementById('portal-role-badge');
+    const welcomeTitle = document.getElementById('welcome-banner-school-title');
+    const welcomeDesc = document.getElementById('welcome-banner-desc');
+    const switcherBox = document.getElementById('teacher-batch-selector-box');
+
+    if (isTeacher) {
+        topName.innerText = 'Teacher Master';
+        topBadge.innerText = 'Administrator';
+        sidebarTag.innerText = 'Master Control';
+        roleBadge.innerText = 'Teacher Clearance';
+        welcomeTitle.innerText = 'Welcome Back, Teacher';
+        welcomeDesc.innerText = 'Manage Girls & Boys batches, mark attendance, record test marks, and update batch passwords.';
+        if (switcherBox) switcherBox.style.display = 'block';
+    } else if (role === 'Girls') {
+        topName.innerText = 'Girls Batch';
+        topBadge.innerText = 'Student Portal';
+        sidebarTag.innerText = 'Girls Batch Portal';
+        roleBadge.innerText = 'Girls Batch Active';
+        welcomeTitle.innerText = 'Welcome, Girls Batch';
+        welcomeDesc.innerText = 'Access your batch schedules, homework, test marks, and doubt solving sessions.';
+        if (switcherBox) switcherBox.style.display = 'none';
+    } else if (role === 'Boys') {
+        topName.innerText = 'Boys Batch';
+        topBadge.innerText = 'Student Portal';
+        sidebarTag.innerText = 'Boys Batch Portal';
+        roleBadge.innerText = 'Boys Batch Active';
+        welcomeTitle.innerText = 'Welcome, Boys Batch';
+        welcomeDesc.innerText = 'Access your batch schedules, homework, test marks, and doubt solving sessions.';
+        if (switcherBox) switcherBox.style.display = 'none';
+    }
+
+    refreshAllModules();
+    navigateTo('view-home');
+}
+
+window.logout = function() {
+    safeRemove('EDUCARE_ACTIVE_ROLE');
+    window.returnToPublicSite();
+};
+
+window.navigateTo = function(id) {
+    document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+    const t = document.getElementById(id);
+    if (t) t.classList.add('active');
+};
+
+function getActiveBatchTarget() {
+    if (activeRole === 'Teacher') return teacherSelectedBatch;
+    return activeRole; // Strictly 'Girls' or 'Boys'
+}
+
+window.setTeacherBatchView = function(b) {
+    teacherSelectedBatch = b;
+    document.getElementById('tbl-batch-girls').classList.toggle('active', b === 'Girls');
+    document.getElementById('tbl-batch-boys').classList.toggle('active', b === 'Boys');
+    loadStudents();
+    loadMarksheet();
+    loadAttendanceRoster();
+    loadFeeRoster();
+    renderAttendanceChart();
+};
+
+function refreshAllModules() {
+    loadStudents();
+    loadHomework();
+    loadNotices();
+    loadTests();
+    loadMarksheet();
+    loadAttendanceRoster();
+    loadAssignments();
+    loadHolidays();
+    loadFeeRoster();
+    renderPortalGallery();
+    loadDoubts();
+    renderAttendanceChart();
+    applyWebsiteContent(db.website_content);
+    renderPublicFaculty();
+    renderPublicGallery();
+}
+
+// ==========================================================================
+// 1. STUDENTS / BATCH DIRECTORY
+// ==========================================================================
+function loadStudents() {
+    const tb = document.getElementById('student-table-body');
+    if (!tb) return;
+    tb.innerHTML = '';
+
+    const batch = getActiveBatchTarget();
+    const isTeacher = (activeRole === 'Teacher');
+
+    const list = db.students.filter(s => isTeacher ? (s.batch === batch) : (s.batch === activeRole));
+    
+    document.getElementById('stat-total-students').innerText = list.length;
+    document.getElementById('batch-dir-title').innerText = `${batch} Batch Student Directory`;
+    document.getElementById('batch-dir-sub').innerText = `Enrolled students list for ${batch} Batch`;
+
+    if (list.length === 0) {
+        tb.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:28px; color:#64748b;">No students enrolled in ${batch} Batch yet.</td></tr>`;
+        return;
+    }
+
+    list.forEach((s, idx) => {
+        tb.innerHTML += `<tr>
+            <td>${idx + 1}</td>
+            <td><strong>${s.name}</strong></td>
+            <td><span class="badge-role" style="${s.batch === 'Girls' ? 'color:#db2777; background:#fdf2f8;' : 'color:#2563eb; background:#eff6ff;'}">${s.batch}</span></td>
+            <td>${s.std}</td>
+            <td>${s.sub}</td>
+            <td>${s.time}</td>
+            <td>${s.phone || '-'}</td>
+            <td class="staff-only-btn" style="${isTeacher ? '' : 'display:none;'}">
+                <button class="btn-3d btn-secondary btn-sm" onclick="window.openEditStudentModal('${s.id}')">Edit</button>
+                <button class="btn-3d btn-danger btn-sm" onclick="window.delStudent('${s.id}')">Delete</button>
+            </td>
+        </tr>`;
+    });
+}
+
+window.addStudentRecord = function() {
+    const batch = document.getElementById('new_st_batch').value;
+    const name = document.getElementById('new_st_name').value.trim();
+    const std = document.getElementById('new_st_std').value;
+    const sub = document.getElementById('new_st_sub').value.trim();
+    const time = document.getElementById('new_st_time').value.trim();
+    const phone = document.getElementById('new_st_phone').value.trim();
+
+    if (!name) return alert('Student Name is required.');
+
+    db.students.push({
+        id: 's_' + Date.now(),
+        batch, name, std, sub, time, phone
+    });
+
+    saveDatabase();
+    loadStudents();
+    renderAttendanceChart();
+    document.getElementById('new_st_name').value = '';
+    alert(`Student "${name}" enrolled in ${batch} Batch!`);
+};
+
+window.openEditStudentModal = function(id) {
+    const s = db.students.find(x => x.id === id);
+    if (!s) return;
+    document.getElementById('edit-student-idx').value = id;
+    document.getElementById('edit-st-name').value = s.name;
+    document.getElementById('edit-st-batch').value = s.batch;
+    document.getElementById('edit-st-standard').value = s.std;
+    document.getElementById('edit-st-sub').value = s.sub;
+    document.getElementById('edit-st-time').value = s.time;
+    document.getElementById('edit-st-phone').value = s.phone || '';
+    document.getElementById('edit-student-modal').style.display = 'flex';
+};
+
+window.saveEditedStudentRecord = function() {
+    const id = document.getElementById('edit-student-idx').value;
+    const s = db.students.find(x => x.id === id);
+    if (s) {
+        s.name = document.getElementById('edit-st-name').value.trim();
+        s.batch = document.getElementById('edit-st-batch').value;
+        s.std = document.getElementById('edit-st-standard').value;
+        s.sub = document.getElementById('edit-st-sub').value.trim();
+        s.time = document.getElementById('edit-st-time').value.trim();
+        s.phone = document.getElementById('edit-st-phone').value.trim();
+        saveDatabase();
+        loadStudents();
+        renderAttendanceChart();
+    }
+    window.closeEditModal();
+    alert('Student record updated!');
+};
+
+window.delStudent = function(id) {
+    if (confirm('Delete this student record?')) {
+        db.students = db.students.filter(x => x.id !== id);
+        saveDatabase();
+        loadStudents();
+        renderAttendanceChart();
+    }
+};
+
+// ==========================================================================
+// 2. HOMEWORK
+// ==========================================================================
+window.toggleHwForm = () => document.getElementById('hw-publish-form').classList.toggle('hidden-panel');
+
+window.publishHomework = function() {
+    const sub = document.getElementById('hw_sub').value.trim();
+    const date = document.getElementById('hw_date').value.trim();
+    const desc = document.getElementById('hw_desc').value.trim();
+    if (!sub || !date) return alert('Subject and Due Date are mandatory.');
+
+    db.homework.unshift({
+        id: 'h_' + Date.now(),
+        sub, date: formatToDDMMYYYY(date), desc
+    });
+    saveDatabase();
+    loadHomework();
+    window.toggleHwForm();
+};
+
+function loadHomework() {
+    const el = document.getElementById('homework-feed');
+    if (!el) return;
+    el.innerHTML = '';
+    const isTeacher = (activeRole === 'Teacher');
+
+    db.homework.forEach(h => {
+        el.innerHTML += `
+            <div class="notice-item-3d card-3d" style="border-left: 4px solid #d97706;">
+                <div class="flex-between">
+                    <h4>${h.sub}</h4>
+                    <span class="badge-role" style="background:#fef3c7; color:#b45309;">Due: ${h.date}</span>
+                </div>
+                <p style="margin-top:8px; line-height:1.6; color:#334155;">${h.desc}</p>
+                <div style="${isTeacher ? '' : 'display:none;'}; margin-top:12px;">
+                    <button class="btn-3d btn-danger btn-sm" onclick="window.delHw('${h.id}')">Delete Task</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.delHw = function(id) {
+    if (confirm('Delete homework task?')) {
+        db.homework = db.homework.filter(x => x.id !== id);
+        saveDatabase();
+        loadHomework();
+    }
+};
+
+// ==========================================================================
+// 3. NOTICE BOARD
+// ==========================================================================
+window.toggleNoticeForm = () => document.getElementById('notice-publish-form').classList.toggle('hidden-panel');
+
+window.publishNotice = function() {
+    const date = document.getElementById('notice-date').value.trim();
+    const title = document.getElementById('notice-title').value.trim();
+    const body = document.getElementById('notice-body').value.trim();
+    if (!date || !title) return alert('Date and Title are required.');
+
+    db.notices.unshift({ id: 'n_' + Date.now(), date: formatToDDMMYYYY(date), title, body });
+    saveDatabase();
+    loadNotices();
+    window.toggleNoticeForm();
+};
+
+function loadNotices() {
+    const el = document.getElementById('notices-feed');
+    const hl = document.getElementById('home-notices-list');
+    if (el) el.innerHTML = '';
+    if (hl) hl.innerHTML = '';
+    const isTeacher = (activeRole === 'Teacher');
+
+    db.notices.forEach(n => {
+        if (el) {
+            el.innerHTML += `
+                <div class="notice-item-3d card-3d">
+                    <h4>${n.title}</h4>
+                    <small style="color:#0284c7;">Date: ${formatToDDMMYYYY(n.date)}</small>
+                    <p style="margin-top:6px; line-height:1.6; color:#334155;">${n.body || ''}</p>
+                    <div style="${isTeacher ? '' : 'display:none;'}; margin-top:10px;">
+                        <button class="btn-3d btn-danger btn-sm" onclick="window.delNotice('${n.id}')">Delete</button>
+                    </div>
+                </div>
+            `;
+        }
+        if (hl) hl.innerHTML += `<li><strong>${n.title}</strong> (${formatToDDMMYYYY(n.date)})</li>`;
+    });
+}
+
+window.delNotice = function(id) {
+    if (confirm('Delete notice?')) {
+        db.notices = db.notices.filter(x => x.id !== id);
+        saveDatabase();
+        loadNotices();
+    }
+};
+
+// ==========================================================================
+// 4. TEST RESULTS & RECORD SCORES
+// ==========================================================================
+function populateTestStudentSelector() {
+    const sel = document.getElementById('modal_test_student');
+    if (!sel) return;
+    sel.innerHTML = '';
+    const batch = getActiveBatchTarget();
+    const list = db.students.filter(s => s.batch === batch);
+    list.forEach(s => {
+        sel.innerHTML += `<option value="${s.id}">${s.name} (${s.std} - ${s.batch} Batch)</option>`;
+    });
+}
+
+window.saveTestRecord = function() {
+    const sId = document.getElementById('modal_test_student').value;
+    const s = db.students.find(x => x.id === sId);
+    const title = document.getElementById('modal_test_title').value.trim();
+    const marks = Number(document.getElementById('modal_test_marks').value);
+    const total = Number(document.getElementById('modal_test_total').value) || 50;
+
+    if (!title || isNaN(marks)) return alert('Test title and marks are required.');
+
+    db.tests.unshift({
+        id: 't_' + Date.now(),
+        studentId: sId,
+        name: s ? s.name : '',
+        batch: s ? s.batch : 'Girls',
+        std: s ? s.std : '10th',
+        title, marks, total
+    });
+
+    saveDatabase();
+    loadTests();
+    loadMarksheet();
+    window.closeAddTestModal();
+    alert('Test score recorded successfully!');
+};
+
+function loadTests() {
+    const tb = document.getElementById('test-table-body');
+    if (!tb) return;
+    tb.innerHTML = '';
+
+    const batch = getActiveBatchTarget();
+    const isTeacher = (activeRole === 'Teacher');
+
+    const list = db.tests.filter(t => isTeacher ? (t.batch === batch) : (t.batch === activeRole));
+
+    if (list.length === 0) {
+        tb.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:28px; color:#64748b;">No test results recorded for ${batch} Batch.</td></tr>`;
+        return;
+    }
+
+    list.forEach((t, idx) => {
+        const pct = Math.round((t.marks / t.total) * 100);
+        tb.innerHTML += `<tr>
+            <td>${idx + 1}</td>
+            <td><strong>${t.name}</strong></td>
+            <td>${t.std}</td>
+            <td>${t.title}</td>
+            <td><strong>${t.marks}</strong></td>
+            <td>${t.total}</td>
+            <td><span class="badge-role" style="${pct >= 40 ? 'color:#15803d; background:#dcfce7;' : 'color:#b91c1c; background:#fee2e2;'}">${pct}%</span></td>
+            <td class="staff-only-btn" style="${isTeacher ? '' : 'display:none;'}">
+                <button class="btn-3d btn-danger btn-sm" onclick="window.delTest('${t.id}')">Delete</button>
+            </td>
+        </tr>`;
+    });
+}
+
+window.delTest = function(id) {
+    if (confirm('Delete this test score?')) {
+        db.tests = db.tests.filter(x => x.id !== id);
+        saveDatabase();
+        loadTests();
+        loadMarksheet();
+    }
+};
+
+// ==========================================================================
+// 5. MARKSHEET MODULE
+// ==========================================================================
+function loadMarksheet() {
+    const el = document.getElementById('marksheet-feed');
+    if (!el) return;
+    el.innerHTML = '';
+
+    const batch = getActiveBatchTarget();
+    const isTeacher = (activeRole === 'Teacher');
+
+    const students = db.students.filter(s => isTeacher ? (s.batch === batch) : (s.batch === activeRole));
+
+    if (students.length === 0) {
+        el.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#64748b; padding:24px;">No student records found.</p>`;
+        return;
+    }
+
+    students.forEach(s => {
+        const tests = db.tests.filter(t => t.studentId === s.id);
+        const got = tests.reduce((a, b) => a + Number(b.marks), 0);
+        const tot = tests.reduce((a, b) => a + Number(b.total), 0);
+        const pct = tot > 0 ? Math.round((got / tot) * 100) : 0;
+
+        el.innerHTML += `
+            <div class="notice-item-3d card-3d">
+                <div class="flex-between">
+                    <h4>${s.name}</h4>
+                    <span class="badge-role" style="background:#e0f2fe; color:#0369a1;">${s.std} • ${s.batch}</span>
+                </div>
+                <p style="margin-top:6px; font-size:12px; color:#64748b;">Tests Evaluated: <b>${tests.length}</b></p>
+                <div class="flex-between" style="margin-top:14px; border-top:1.5px solid #f1f5f9; padding-top:12px;">
+                    <span style="font-weight:700; color:#334155;">Cumulative Score:</span>
+                    <strong style="font-size:16px; color:${pct >= 40 ? '#059669' : '#dc2626'};">${pct}% (${got}/${tot})</strong>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// ==========================================================================
+// 6. ATTENDANCE REGISTER & BAR CHART
+// ==========================================================================
+window.loadAttendanceRoster = function() {
+    const std = document.getElementById('att-standard-filter').value;
+    const dt = (document.getElementById('att-date').value || formatToDDMMYYYY(new Date().toISOString().split('T')[0])).replace(/\//g, '-');
+    const tb = document.getElementById('attendance-table-body');
+    if (!tb) return;
+    tb.innerHTML = '';
+
+    const batch = getActiveBatchTarget();
+    const isTeacher = (activeRole === 'Teacher');
+
+    const key = `${dt}_${batch}_${std}`;
+    const roster = db.attendance[key] || {};
+
+    const list = db.students.filter(s => (s.batch === batch && s.std === std));
+
+    if (list.length === 0) {
+        tb.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:24px; color:#64748b;">No students enrolled in ${std} (${batch} Batch).</td></tr>`;
+        return;
+    }
+
+    list.forEach((s, idx) => {
+        const st = roster[s.id] || 'Present';
+        tb.innerHTML += `<tr>
+            <td>${idx + 1}</td>
+            <td><strong>${s.name}</strong></td>
+            <td>${s.batch} Batch</td>
+            <td><span class="badge-role" style="${st === 'Present' ? 'color:#15803d; background:#dcfce7;' : 'color:#b45309; background:#fef3c7;'}">${st}</span></td>
+            <td class="staff-only-btn" style="${isTeacher ? '' : 'display:none;'}">
+                <button class="btn-3d btn-sm ${st === 'Present' ? 'btn-primary' : 'btn-secondary'}" onclick="window.setPresence('${s.id}', 'Present')">P</button>
+                <button class="btn-3d btn-sm ${st === 'Absent' ? 'btn-danger' : 'btn-secondary'}" onclick="window.setPresence('${s.id}', 'Absent')">A</button>
+            </td>
+        </tr>`;
+    });
+};
+
+window.setPresence = function(id, st) {
+    const std = document.getElementById('att-standard-filter').value;
+    const dt = (document.getElementById('att-date').value || formatToDDMMYYYY(new Date().toISOString().split('T')[0])).replace(/\//g, '-');
+    const batch = getActiveBatchTarget();
+    const key = `${dt}_${batch}_${std}`;
+
+    if (!db.attendance[key]) db.attendance[key] = {};
+    db.attendance[key][id] = st;
+    saveDatabase();
+    window.loadAttendanceRoster();
+    renderAttendanceChart();
+};
+
+window.markBulkAttendance = function(st) {
+    const std = document.getElementById('att-standard-filter').value;
+    const dt = (document.getElementById('att-date').value || formatToDDMMYYYY(new Date().toISOString().split('T')[0])).replace(/\//g, '-');
+    const batch = getActiveBatchTarget();
+    const key = `${dt}_${batch}_${std}`;
+
+    if (!db.attendance[key]) db.attendance[key] = {};
+    db.students.filter(s => (s.batch === batch && s.std === std)).forEach(s => db.attendance[key][s.id] = st);
+    saveDatabase();
+    window.loadAttendanceRoster();
+    renderAttendanceChart();
+};
+
+function renderAttendanceChart() {
+    const el = document.getElementById('attendance-bar-chart');
+    if (!el) return;
+    el.innerHTML = '';
+
+    const batch = getActiveBatchTarget();
+    const standards = ["8th", "9th", "10th", "11th-Commerce", "11th-Science", "12th-Commerce", "12th-Science"];
+    const todayKey = formatToDDMMYYYY(new Date().toISOString().split('T')[0]).replace(/\//g, '-');
+
+    standards.forEach(std => {
+        const classStudents = db.students.filter(s => (s.batch === batch && s.std === std));
+        let ratio = 100;
+
+        if (classStudents.length > 0) {
+            const roster = db.attendance[`${todayKey}_${batch}_${std}`] || {};
+            let presentCount = 0;
+            classStudents.forEach(s => {
+                if (roster[s.id] !== 'Absent') presentCount++;
+            });
+            ratio = Math.round((presentCount / classStudents.length) * 100);
+        }
+
+        el.innerHTML += `
+            <div class="chart-bar-group">
+                <span style="font-size:10px; font-weight:800; color:#0284c7;">${ratio}%</span>
+                <div class="chart-bar-track"><div class="chart-bar-fill" style="height:${ratio}%;"></div></div>
+                <span style="font-size:10px; margin-top:3px;">${std}</span>
+            </div>
+        `;
+    });
+}
+
+// ==========================================================================
+// 7. ASSIGNMENT MODULE
+// ==========================================================================
+window.toggleAssignForm = () => document.getElementById('assign-publish-form').classList.toggle('hidden-panel');
+
+window.publishAssignment = function() {
+    const title = document.getElementById('asg_title').value.trim();
+    const link = document.getElementById('asg_link').value.trim();
+    const desc = document.getElementById('asg_desc').value.trim();
+    if (!title) return alert('Assignment Title is required.');
+
+    db.assignments.unshift({ id: 'a_' + Date.now(), title, link, desc });
+    saveDatabase();
+    loadAssignments();
+    window.toggleAssignForm();
+};
+
+function loadAssignments() {
+    const el = document.getElementById('assignment-feed');
+    if (!el) return;
+    el.innerHTML = '';
+    const isTeacher = (activeRole === 'Teacher');
+
+    db.assignments.forEach(a => {
+        el.innerHTML += `
+            <div class="notice-item-3d card-3d">
+                <div class="flex-between">
+                    <h4>${a.title}</h4>
+                    ${a.link ? `<a href="${a.link}" target="_blank" class="btn-3d btn-secondary btn-sm">Open File / Link ➔</a>` : ''}
+                </div>
+                <p style="margin-top:8px; line-height:1.6; color:#334155;">${a.desc || ''}</p>
+                <div style="${isTeacher ? '' : 'display:none;'}; margin-top:12px;">
+                    <button class="btn-3d btn-danger btn-sm" onclick="window.delAssign('${a.id}')">Delete</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.delAssign = function(id) {
+    if (confirm('Delete assignment?')) {
+        db.assignments = db.assignments.filter(x => x.id !== id);
+        saveDatabase();
+        loadAssignments();
+    }
+};
+
+// ==========================================================================
+// 8. HOLIDAYS MODULE
+// ==========================================================================
+window.toggleHolidayForm = () => document.getElementById('holiday-add-form').classList.toggle('hidden-panel');
+
+window.addHolidayRecord = function() {
+    const date = document.getElementById('hld-date').value.trim();
+    const name = document.getElementById('hld-name').value.trim();
+    if (!date || !name) return alert('Date and Holiday Name are mandatory.');
+
+    db.holidays.push({ id: 'hld_' + Date.now(), date: formatToDDMMYYYY(date), name });
+    saveDatabase();
+    loadHolidays();
+    window.toggleHolidayForm();
+};
+
+function loadHolidays() {
+    const el = document.getElementById('holiday-roster');
+    const hl = document.getElementById('home-holidays-list');
+    if (el) el.innerHTML = '';
+    if (hl) hl.innerHTML = '';
+    const isTeacher = (activeRole === 'Teacher');
+
+    db.holidays.forEach(h => {
+        if (el) {
+            el.innerHTML += `
+                <div class="holiday-card-3d card-3d">
+                    <h4>${h.name}</h4>
+                    <small style="color:#0284c7;">Date: ${formatToDDMMYYYY(h.date)}</small>
+                    <div style="${isTeacher ? '' : 'display:none;'}; margin-top:10px;">
+                        <button class="btn-3d btn-danger btn-sm" onclick="window.delHoliday('${h.id}')">Delete</button>
+                    </div>
+                </div>
+            `;
+        }
+        if (hl) hl.innerHTML += `<li><strong>${h.name}</strong> (${formatToDDMMYYYY(h.date)})</li>`;
+    });
+}
+
+window.delHoliday = function(id) {
+    if (confirm('Delete holiday?')) {
+        db.holidays = db.holidays.filter(x => x.id !== id);
+        saveDatabase();
+        loadHolidays();
+    }
+};
+
+// ==========================================================================
+// 9. FEE STATUS
+// ==========================================================================
+window.loadFeeRoster = function() {
+    const m = document.getElementById('fee-month-selector').value;
+    const tb = document.getElementById('fee-table-body');
+    if (!tb) return;
+    tb.innerHTML = '';
+
+    const batch = getActiveBatchTarget();
+    const isTeacher = (activeRole === 'Teacher');
+
+    const list = db.students.filter(s => isTeacher ? (s.batch === batch) : (s.batch === activeRole));
+
+    if (list.length === 0) {
+        tb.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:24px; color:#64748b;">No students found in ${batch} Batch.</td></tr>`;
+        return;
+    }
+
+    list.forEach((s, idx) => {
+        const k = `${s.id}_${m}`;
+        const st = db.fees[k] || 'Pending';
+        const isPaid = (st === 'Paid');
+
+        tb.innerHTML += `<tr>
+            <td>${idx + 1}</td>
+            <td><strong>${s.name}</strong></td>
+            <td>${s.batch} Batch</td>
+            <td>${s.std}</td>
+            <td>${m} 2026</td>
+            <td><span class="badge-role" style="${isPaid ? 'color:#15803d; background:#dcfce7;' : 'color:#b45309; background:#fef3c7;'}">${st}</span></td>
+            <td class="staff-only-btn" style="${isTeacher ? '' : 'display:none;'}">
+                <button class="btn-3d btn-sm ${isPaid ? 'btn-secondary' : 'btn-primary'}" onclick="window.toggleFeeStatus('${s.id}', '${m}')">
+                    ${isPaid ? 'Set Pending' : 'Mark Paid ✓'}
+                </button>
+            </td>
+        </tr>`;
+    });
+};
+
+window.toggleFeeStatus = function(id, m) {
+    const k = `${id}_${m}`;
+    db.fees[k] = (db.fees[k] === 'Paid') ? 'Pending' : 'Paid';
+    saveDatabase();
+    window.loadFeeRoster();
+};
+
+// ==========================================================================
+// 10. GALLERY MANAGER
+// ==========================================================================
+function renderPortalGallery() {
+    const el = document.getElementById('portal-gallery-grid');
+    if (!el) return;
+    el.innerHTML = '';
+    const isTeacher = (activeRole === 'Teacher');
+
+    db.gallery.forEach(item => {
+        const isVideo = item.type === 'video';
+        const mediaTag = isVideo 
+            ? `<video src="${item.url}" controls></video>` 
+            : `<img src="${item.url}" alt="${item.title}">`;
+
+        el.innerHTML += `
+            <div class="gallery-card-item card-3d">
+                <div class="gallery-media-slot">
+                    ${mediaTag}
+                </div>
+                <div class="gallery-caption-box">
+                    <strong>${item.title}</strong>
+                    <div style="${isTeacher ? '' : 'display:none;'}">
+                        <button class="btn-3d btn-danger btn-sm" onclick="window.deleteGalleryItem('${item.id}')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+function renderPublicGallery() {
+    const pubGrid = document.getElementById('public-gallery-grid');
+    if (!pubGrid) return;
+    pubGrid.innerHTML = '';
+
+    db.gallery.forEach(item => {
+        const isVideo = item.type === 'video';
+        const mediaTag = isVideo 
+            ? `<video src="${item.url}" controls></video>` 
+            : `<img src="${item.url}" alt="${item.title}">`;
+
+        pubGrid.innerHTML += `
+            <div class="gallery-card-item card-3d">
+                <div class="gallery-media-slot">
+                    ${mediaTag}
+                </div>
+                <div class="gallery-caption-box">
+                    <strong>${item.title || 'Classroom Activity'}</strong>
+                    <span class="badge-role" style="background:#e0f2fe; color:#0369a1;">${isVideo ? '📹 Video' : '📷 Photo'}</span>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.uploadGalleryItem = function() {
+    const title = document.getElementById('gal_item_title').value.trim();
+    const type = document.getElementById('gal_item_type').value;
+    const fileInput = document.getElementById('gal_item_file');
+
+    if (!title || !fileInput.files || !fileInput.files[0]) {
+        return alert('Title and Photo/Video file are required.');
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        db.gallery.unshift({
+            id: 'g_' + Date.now(),
+            title, type, url: e.target.result
+        });
+        saveDatabase();
+        renderPortalGallery();
+        renderPublicGallery();
+        document.getElementById('gal_item_title').value = '';
+        fileInput.value = '';
+        alert('Item uploaded to gallery!');
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+};
+
+window.deleteGalleryItem = function(id) {
+    if (confirm('Delete this gallery item?')) {
+        db.gallery = db.gallery.filter(x => x.id !== id);
+        saveDatabase();
+        renderPortalGallery();
+        renderPublicGallery();
+    }
+};
+
+// ==========================================================================
+// 11. DOUBTS & SUGGESTIONS
+// ==========================================================================
+window.toggleDoubtForm = () => document.getElementById('doubt-add-form').classList.toggle('hidden-panel');
+
+window.submitDoubt = function() {
+    const name = document.getElementById('doubt_st_name').value.trim();
+    const sub = document.getElementById('doubt_sub').value.trim();
+    const msg = document.getElementById('doubt_msg').value.trim();
+    if (!name || !sub || !msg) return alert('All fields are required.');
+
+    db.doubts.unshift({
+        id: 'd_' + Date.now(),
+        name, batch: activeRole, sub, msg
+    });
+    saveDatabase();
+    loadDoubts();
+    window.toggleDoubtForm();
+    alert('Doubt sent to the teacher!');
+};
+
+function loadDoubts() {
+    const el = document.getElementById('doubts-feed');
+    if (!el) return;
+    el.innerHTML = '';
+    const isTeacher = (activeRole === 'Teacher');
+
+    db.doubts.forEach(d => {
+        el.innerHTML += `
+            <div class="notice-item-3d card-3d">
+                <div class="flex-between">
+                    <h4>${d.sub}</h4>
+                    <span class="badge-role" style="background:#e0f2fe; color:#0369a1;">${d.name} (${d.batch} Batch)</span>
+                </div>
+                <p style="margin-top:8px; line-height:1.6; color:#334155;">${d.msg}</p>
+                <div style="${isTeacher ? '' : 'display:none;'}; margin-top:10px;">
+                    <button class="btn-3d btn-danger btn-sm" onclick="window.delDoubt('${d.id}')">Dismiss Doubt</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.delDoubt = function(id) {
+    if (confirm('Dismiss doubt?')) {
+        db.doubts = db.doubts.filter(x => x.id !== id);
+        saveDatabase();
+        loadDoubts();
+    }
+};
+
+// ==========================================================================
+// 12. WEBSITE & DETAILS LIVE EDITOR
+// ==========================================================================
+function applyWebsiteContent(c) {
+    if (!c) c = db.website_content;
+
+    const sName = c.schoolName || "Educare Group Tuition";
+    ['pub-school-main-name', 'modal-school-name', 'sidebar-school-title', 'header-school-name'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = sName;
+    });
+
+    const subEl = document.getElementById('pub-school-subtag');
+    if (subEl) subEl.innerText = c.schoolSubtag || "";
+
+    const footEl = document.getElementById('pub-footer-copy');
+    if (footEl) footEl.innerText = `© 2026 ${sName}. All Rights Reserved.`;
+
+    const bgOverlay = document.getElementById('site-background-wallpaper');
+    if (bgOverlay) {
+        bgOverlay.style.backgroundImage = c.bgWallpaper ? `url('${c.bgWallpaper}')` : 'none';
+        const opVal = (c.bgOpacity !== undefined ? c.bgOpacity : 18) / 100;
+        bgOverlay.style.opacity = opVal;
+    }
+
+    const topR = document.getElementById('pub-top-ribbon');
+    if (topR && c.topRibbon) topR.innerHTML = c.topRibbon;
+
+    const hBadge = document.getElementById('pub-hero-badge');
+    if (hBadge && c.heroBadge) hBadge.innerText = c.heroBadge;
+
+    const hTitle = document.getElementById('pub-hero-title');
+    if (hTitle && c.heroTitle) hTitle.innerText = c.heroTitle;
+
+    const hDesc = document.getElementById('pub-hero-desc');
+    if (hDesc && c.heroDesc) hDesc.innerText = c.heroDesc;
+
+    const tPhone = document.getElementById('pub-top-phone');
+    if (tPhone && c.phone) { tPhone.innerText = c.phone; tPhone.href = `tel:${c.phone}`; }
+
+    const cPhone = document.getElementById('pub-contact-phone');
+    if (cPhone && c.phone) { cPhone.innerText = `+91 ${c.phone}`; cPhone.href = `tel:${c.phone}`; }
+
+    const tEmail = document.getElementById('pub-top-email');
+    if (tEmail && c.email) { tEmail.innerText = c.email; tEmail.href = `mailto:${c.email}`; }
+
+    const cEmail = document.getElementById('pub-contact-email');
+    if (cEmail && c.email) { cEmail.innerText = c.email; cEmail.href = `mailto:${c.email}`; }
+
+    const cAddr = document.getElementById('pub-contact-address');
+    if (cAddr && c.address) cAddr.innerText = c.address;
+
+    const cHours = document.getElementById('pub-contact-hours');
+    if (cHours && c.hours) cHours.innerText = c.hours;
+
+    const mIframe = document.getElementById('pub-map-iframe');
+    if (mIframe && c.mapUrl) mIframe.src = c.mapUrl;
+
+    const cName = document.getElementById('pub-campus-name');
+    if (cName && c.campusTitle) cName.innerText = c.campusTitle;
+
+    // Populate Editor
+    const edName = document.getElementById('edit-web-schoolname');
+    if (edName) edName.value = c.schoolName || "Educare Group Tuition";
+
+    const edSubtag = document.getElementById('edit-web-schoolsubtag');
+    if (edSubtag) edSubtag.value = c.schoolSubtag || "";
+
+    const edRibbon = document.getElementById('edit-web-topribbon');
+    if (edRibbon) edRibbon.value = c.topRibbon || '';
+
+    const edBadge = document.getElementById('edit-web-herobadge');
+    if (edBadge) edBadge.value = c.heroBadge || '';
+
+    const edTitle = document.getElementById('edit-web-herotitle');
+    if (edTitle) edTitle.value = c.heroTitle || '';
+
+    const edDesc = document.getElementById('edit-web-herodesc');
+    if (edDesc) edDesc.value = c.heroDesc || '';
+
+    const edPhone = document.getElementById('edit-web-phone');
+    if (edPhone) edPhone.value = c.phone || '9173830909';
+
+    const edEmail = document.getElementById('edit-web-email');
+    if (edEmail) edEmail.value = c.email || 'educaregrouptuition@gmail.com';
+
+    const edHours = document.getElementById('edit-web-hours');
+    if (edHours) edHours.value = c.hours || '';
+
+    const edCamp = document.getElementById('edit-web-campustitle');
+    if (edCamp) edCamp.value = c.campusTitle || '';
+
+    const edAddr = document.getElementById('edit-web-address');
+    if (edAddr) edAddr.value = c.address || '';
+
+    const edMap = document.getElementById('edit-web-mapurl');
+    if (edMap) edMap.value = c.mapUrl || '';
+
+    const opSlider = document.getElementById('edit-web-bg-opacity');
+    const opLabel = document.getElementById('bg-opacity-val-label');
+    if (opSlider && opLabel) {
+        const val = c.bgOpacity !== undefined ? c.bgOpacity : 18;
+        opSlider.value = val;
+        opLabel.innerText = `${val}%`;
+    }
+}
+
+window.updateBgOpacityPreview = function(val) {
+    const opLabel = document.getElementById('bg-opacity-val-label');
+    if (opLabel) opLabel.innerText = `${val}%`;
+    const bgOverlay = document.getElementById('site-background-wallpaper');
+    if (bgOverlay) bgOverlay.style.opacity = val / 100;
+};
+
+let uploadedBgWallpaperBase64 = null;
+window.handleBgPhotoUpload = function(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = e => {
+            uploadedBgWallpaperBase64 = e.target.result;
+            const bgOverlay = document.getElementById('site-background-wallpaper');
+            if (bgOverlay) bgOverlay.style.backgroundImage = `url('${e.target.result}')`;
+            alert('Classroom background image selected! Click "Save & Publish" to keep it permanent.');
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+};
+
+window.saveWebsiteContentToCloud = function() {
+    const opacityInput = document.getElementById('edit-web-bg-opacity');
+    const parsedOpacity = opacityInput ? parseInt(opacityInput.value) : 18;
+
+    db.website_content = {
+        schoolName: document.getElementById('edit-web-schoolname').value.trim() || "Educare Group Tuition",
+        schoolSubtag: document.getElementById('edit-web-schoolsubtag').value.trim() || "",
+        topRibbon: document.getElementById('edit-web-topribbon').value.trim() || "",
+        heroBadge: document.getElementById('edit-web-herobadge').value.trim() || "",
+        heroTitle: document.getElementById('edit-web-herotitle').value.trim() || "",
+        heroDesc: document.getElementById('edit-web-herodesc').value.trim() || "",
+        phone: document.getElementById('edit-web-phone').value.trim() || '9173830909',
+        email: document.getElementById('edit-web-email').value.trim() || 'educaregrouptuition@gmail.com',
+        hours: document.getElementById('edit-web-hours').value.trim() || "",
+        campusTitle: document.getElementById('edit-web-campustitle').value.trim() || "",
+        address: document.getElementById('edit-web-address').value.trim() || "",
+        mapUrl: document.getElementById('edit-web-mapurl').value.trim() || "",
+        bgWallpaper: uploadedBgWallpaperBase64 || db.website_content.bgWallpaper,
+        bgOpacity: parsedOpacity
+    };
+
+    saveDatabase();
+    applyWebsiteContent(db.website_content);
+    alert('Tuition details and background wallpaper saved successfully!');
+};
+
+// ==========================================================================
+// 13. BATCH PASSWORD MANAGEMENT
+// ==========================================================================
+window.saveBatchPasswords = function() {
+    const g = document.getElementById('cfg-girls-pass').value.trim();
+    const b = document.getElementById('cfg-boys-pass').value.trim();
+    const t = document.getElementById('cfg-teacher-pass').value.trim();
+
+    if (!g || !b || !t) return alert('All passwords are required.');
+
+    safeSet(PASSWORDS_KEY, JSON.stringify({ Girls: g, Boys: b, Teacher: t }));
+    alert(`Batch passwords updated successfully!\nGirls: ${g}\nBoys: ${b}\nTeacher: ${t}`);
+};
+
+window.saveQuickPasswords = function() {
+    const g = document.getElementById('quick-girls-pass').value.trim();
+    const b = document.getElementById('quick-boys-pass').value.trim();
+    const t = document.getElementById('quick-teacher-pass').value.trim();
+
+    if (!g || !b || !t) return alert('All passwords are required.');
+
+    safeSet(PASSWORDS_KEY, JSON.stringify({ Girls: g, Boys: b, Teacher: t }));
+    window.closeManagePasswordsModal();
+    alert('Passwords updated!');
+};
+
+function renderPublicFaculty() {
+    const el = document.getElementById('public-faculty-grid');
+    if (!el) return;
+    el.innerHTML = '';
+
+    initialFaculty.forEach(t => {
+        el.innerHTML += `
+            <div class="faculty-card-pro card-3d">
+                <div class="faculty-avatar-crest">👨‍🏫</div>
+                <h3>${t.name}</h3>
+                <span class="faculty-qualification">${t.qual}</span>
+                <span class="faculty-tag">${t.subject}</span>
+                <span class="faculty-experience-badge">${t.exp} Experience</span>
+                <span class="faculty-class-badge">${t.classteacher}</span>
+            </div>
+        `;
+    });
+}
+
+window.exportBackupJSON = function() {
+    const a = document.createElement('a');
+    a.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(db));
+    a.download = 'Educare_Tuition_Backup.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+};
+
+window.resetTuitionData = function() {
+    if (confirm('Are you sure you want to reset all records to initial default?')) {
+        safeRemove(STORAGE_KEY);
+        safeRemove(PASSWORDS_KEY);
+        location.reload();
+    }
+};
+
+// Bootstrap
+window.addEventListener('DOMContentLoaded', () => {
+    loadDatabase();
+    const savedRole = safeGet('EDUCARE_ACTIVE_ROLE');
+    if (savedRole) {
+        openPortal(savedRole);
+    } else {
+        renderPublicFaculty();
+        renderPublicGallery();
+        applyWebsiteContent(db.website_content);
+    }
+    window.switchLanguage('en');
+});
+
+</script>
+</body>
+</html>
